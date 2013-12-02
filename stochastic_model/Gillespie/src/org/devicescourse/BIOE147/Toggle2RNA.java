@@ -45,7 +45,7 @@ public class Toggle2RNA {
 
     public static void main(String[] args){
         Toggle2RNA toggle = new Toggle2RNA();
-        Chain chain = toggle.generateChain(1,100,100);
+        Chain chain = toggle.generateChain(1,50,.1);
 
         chain.start();
 
@@ -72,7 +72,7 @@ public class Toggle2RNA {
 
 
         // Create all reactions
-        Reaction[] reactions = new Reaction[10];    // Not sure how many yet
+        Reaction[] reactions = new Reaction[8];    // Not sure how many yet
 
         /*
         * Generation of GFP from
@@ -91,7 +91,9 @@ public class Toggle2RNA {
                 /*Amount of aRNA*/
                 double concaRNA = aRNA.getValue()/avagadroNumber/volumeOfEcoli;
 
-                double probabiliy = gfpRNA.getValue() * 1 / (1 + concaRNA);
+                double probabiliy = gfpRNA.getValue() * 1 / (1 + KeqArna_Gfp * concaRNA);
+                System.out.println("GFPRNA conc: " + gfpRNA.getValue());
+                System.out.println("GFP Formation Probability: " + probabiliy);
                 if(probabiliy < Math.random()) {
                     return 0;
                 }
@@ -102,7 +104,7 @@ public class Toggle2RNA {
         /*
         * Production of aRNA (constitutive)
         */
-        reactions[1] = new Reaction() {
+        /*reactions[1] = new Reaction() {
             @Override
             public void updateValues() {
                 aRNA.increment();
@@ -112,12 +114,12 @@ public class Toggle2RNA {
             public double calculateQuantities() {
                 return BetaForaRNA * aRNA.getValue();
             }
-        };
+        }; */
 
         /*
         * Production of bRNA (constitutive)
         */
-        reactions[2] = new Reaction() {
+        /*reactions[2] = new Reaction() {
             @Override
             public void updateValues() {
                 bRNA.increment();
@@ -127,12 +129,12 @@ public class Toggle2RNA {
             public double calculateQuantities() {
                 return BetaForbRNA * bRNA.getValue();
             }
-        };
+        };*/
 
         /*
         * Production of gfpRNA (constitutive)
         */
-        reactions[3] = new Reaction() {
+        reactions[1] = new Reaction() {
             @Override
             public void updateValues() {
                 gfpRNA.increment();
@@ -145,9 +147,9 @@ public class Toggle2RNA {
         };
 
         /*
-        * Degradation of aRNA
+        * Degradation of aRNA (constitutive)
         */
-        reactions[4] = new Reaction() {
+        reactions[2] = new Reaction() {
             @Override
             public void updateValues() {
                 aRNA.decrement();
@@ -160,9 +162,10 @@ public class Toggle2RNA {
         };
 
         /*
-        * Degradation of bRNA
+        * Degradation of bRNA (constitutive)
+        *
         */
-        reactions[5] = new Reaction() {
+        reactions[3] = new Reaction() {
             @Override
             public void updateValues() {
                 bRNA.decrement();
@@ -178,7 +181,7 @@ public class Toggle2RNA {
         /*
         * Degradation of gfpRNA
         */
-        reactions[6] = new Reaction() {
+        reactions[4] = new Reaction() {
             @Override
             public void updateValues() {
                 gfpRNA.decrement();
@@ -192,9 +195,9 @@ public class Toggle2RNA {
 
 
         /*
-        * Degradation of GFP
+        * Degradation of GFP (constitutive)
         */
-        reactions[7]  = new Reaction() {
+        reactions[5]  = new Reaction() {
             @Override
             public void updateValues() {
                 GFP.decrement();
@@ -207,12 +210,12 @@ public class Toggle2RNA {
         };
 
         /*
-        * Cleaving of aRNA by bRNA
+        * aRNA which depends on bRNA
         */
-        reactions[8] = new Reaction() {
+        reactions[6] = new Reaction() {
             @Override
             public void updateValues() {
-                aRNA.decrement();
+                aRNA.increment();
             }
 
             @Override
@@ -220,21 +223,22 @@ public class Toggle2RNA {
                /*Amount of aRNA*/
                 double concbRNA = bRNA.getValue()/avagadroNumber/volumeOfEcoli;
 
-                double probabiliy = aRNA.getValue() * 1 / (1 + concbRNA);
+                double probabiliy = aRNA.getValue() * 1 / (1 + KeqBrna_Arna * concbRNA);
+                System.out.println("aRNA Degradation Probability: " + probabiliy);
                 if(probabiliy < Math.random()) {
                     return 0;
                 }
-                return cleaveRate_aRNA * aRNA.getValue();
+                return BetaForaRNA * aRNA.getValue();
             }
         };
 
         /*
-        * Cleaving of bRNA by aRNA
+        * bRNA which depends on aRNA
         */
-        reactions[9] = new Reaction() {
+        reactions[7] = new Reaction() {
             @Override
             public void updateValues() {
-                bRNA.decrement();
+                bRNA.increment();
             }
 
             @Override
@@ -242,11 +246,12 @@ public class Toggle2RNA {
                 /*Amount of aRNA*/
                 double concaRNA = aRNA.getValue()/avagadroNumber/volumeOfEcoli;
 
-                double probabiliy = bRNA.getValue() * 1 / (1 + concaRNA);
+                double probabiliy = bRNA.getValue() * 1 / (1 + KeqArna_Brna* concaRNA);
+                System.out.println("bRNA degradation Probability: " + probabiliy);
                 if(probabiliy < Math.random()) {
                     return 0;
                 }
-                return cleaveRate_bRNA * bRNA.getValue();
+                return BetaForbRNA * bRNA.getValue();
             }
         };
 
@@ -260,19 +265,20 @@ public class Toggle2RNA {
 
     double volumeOfEcoli = 4.76E-18;    //Volume of an E. coli cell
 
-    double KeqForaRNA = 1E9;     //Binding Keq of aRNA to bRNA ribozyme
-    double KeqForbRNA = 1E9;     //Binding Keq of bRNA to aRNA ribozyme
+    double KeqArna_Gfp = 1E9;     //Binding Keq of aRNA to GFPrna
+    double KeqArna_Brna = 1E9;    //Binding Keq of aRNA to bRNA
+    double KeqBrna_Arna = 1E9;     //Binding Keq of bRNA to aRNA ribozyme
 
-    double BetaForaRNA = 2;    //Formation of aRNA rate
-    double BetaForbRNA = 2;    //Formation of bRNA rate
-    double BetaForgfpRNA = 2;  //Formation of gfpRNA rate
+    double BetaForaRNA = 100;    //Formation of aRNA rate
+    double BetaForbRNA = 100;    //Formation of bRNA rate
+    double BetaForgfpRNA = 100;  //Formation of gfpRNA rate
     double BetaForGFP = 120;     //Formation of GFP rate
 
-    double cleaveRate_aRNA = 25;     // The rate at which aRNA is cleaved when bound by bRNA
-    double cleaveRate_bRNA = 25;  // The rate at which bRNA is cleaved when bound by aRNA
+    //double cleaveRate_aRNA = 90;     // The rate at which aRNA is cleaved when bound by bRNA
+    //double cleaveRate_bRNA = 90;  // The rate at which bRNA is cleaved when bound by aRNA
 
-    double DegaRNA = 5;         //Degradation of aRNA
-    double DegbRNA = 5;         //Degradation of bRNA
-    double DeggfpRNA = 5;       //Degradation of gfpRNA
+    double DegaRNA = 8;         //Degradation of aRNA
+    double DegbRNA = 8;         //Degradation of bRNA
+    double DeggfpRNA = 9;       //Degradation of gfpRNA
     double DegGFP = 1;       //Degradation of GFP
 }

@@ -5,9 +5,9 @@
     <ignored path="stochastic_model.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Toggle2.java" changelist="656ca557-d979-4eeb-91e9-66e22ff8e3d1" time="1385516031281" ignored="false" />
-    <file path="/Toggle2RNA.java" changelist="656ca557-d979-4eeb-91e9-66e22ff8e3d1" time="1385535526187" ignored="false" />
+    <file path="/Toggle2RNA.java" changelist="656ca557-d979-4eeb-91e9-66e22ff8e3d1" time="1386017239763" ignored="false" />
     <file path="/Chain.java" changelist="656ca557-d979-4eeb-91e9-66e22ff8e3d1" time="1385525457701" ignored="false" />
-    <file path="/fragment.java" changelist="656ca557-d979-4eeb-91e9-66e22ff8e3d1" time="1385537152059" ignored="false" />
+    <file path="/fragment.java" changelist="656ca557-d979-4eeb-91e9-66e22ff8e3d1" time="1386014930697" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,67 +67,13 @@
     <favorites_list name="stochastic_model" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.46324182">
       <split-first>
         <leaf>
-          <file leaf-file-name="Toggle1.java" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Gillespie/src/org/devicescourse/examples/Toggle1.java">
+          <file leaf-file-name="Specie.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Gillespie/src/org/devicescourse/gillespie/Specie.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="36" column="13" selection-start="1486" selection-end="1486" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="MichaelisMenton.java" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Gillespie/src/org/devicescourse/examples/MichaelisMenton.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="40" column="13" selection-start="1507" selection-end="1507" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="OriginalGillespie.java" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Gillespie/src/org/devicescourse/examples/OriginalGillespie.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="45" column="13" selection-start="1702" selection-end="1702" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Toggle4.java" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Gillespie/src/org/devicescourse/examples/Toggle4.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="37" column="13" selection-start="1480" selection-end="1480" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Toggle5.java" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Gillespie/src/org/devicescourse/examples/Toggle5.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="39" column="13" selection-start="1621" selection-end="1621" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Toggle6.java" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Gillespie/src/org/devicescourse/examples/Toggle6.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="44" column="13" selection-start="1789" selection-end="1789" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Reaction.java" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Gillespie/src/org/devicescourse/gillespie/Reaction.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="29" column="22" selection-start="1153" selection-end="1153" vertical-scroll-proportion="0.0">
+                <state line="41" column="42" selection-start="1603" selection-end="1603" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -136,7 +82,7 @@
           <file leaf-file-name="Chain.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Gillespie/src/org/devicescourse/gillespie/Chain.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="34" column="58" selection-start="1573" selection-end="1573" vertical-scroll-proportion="0.0">
+                <state line="155" column="17" selection-start="5205" selection-end="5212" vertical-scroll-proportion="1.48">
                   <folding />
                 </state>
               </provider>
@@ -145,7 +91,7 @@
           <file leaf-file-name="Toggle2.java" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Gillespie/src/org/devicescourse/BIOE147/Toggle2.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="43" column="50" selection-start="1769" selection-end="1769" vertical-scroll-proportion="-0.3846154">
+                <state line="230" column="25" selection-start="8035" selection-end="8035" vertical-scroll-proportion="0.637827">
                   <folding />
                 </state>
               </provider>
@@ -155,19 +101,10 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="Toggle3.java" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Gillespie/src/org/devicescourse/examples/Toggle3.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="52" column="29" selection-start="2063" selection-end="2063" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="Toggle2RNA.java" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Gillespie/src/org/devicescourse/BIOE147/Toggle2RNA.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="30" column="86" selection-start="1216" selection-end="1216" vertical-scroll-proportion="-7.858757">
+                <state line="274" column="25" selection-start="8252" selection-end="8252" vertical-scroll-proportion="0.4915254">
                   <folding />
                 </state>
               </provider>
@@ -197,10 +134,8 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1919" />
-    <option name="y" value="312" />
-    <option name="width" value="1368" />
-    <option name="height" value="769" />
+    <option name="width" value="1280" />
+    <option name="height" value="800" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -228,7 +163,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -283,6 +218,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="gillespie" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stochastic_model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gillespie" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="devicescourse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="examples" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -311,18 +268,19 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="FullScreen" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -424,6 +382,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -449,19 +420,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -529,8 +487,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1919" y="312" width="1368" height="769" extended-state="6" />
-    <editor active="false" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -540,13 +498,13 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32949308" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.8352535" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14545454" sideWeight="0.636953" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.363047" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1337115" sideWeight="0.76638174" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23361823" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -633,20 +591,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gillespie/src/org/devicescourse/gillespie/Reaction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="22" selection-start="1153" selection-end="1153" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gillespie/src/org/devicescourse/gillespie/Specie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="42" selection-start="1603" selection-end="1603" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gillespie/src/org/devicescourse/examples/Toggle6.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="44" column="13" selection-start="1789" selection-end="1789" vertical-scroll-proportion="0.0">
@@ -664,13 +608,6 @@
     <entry file="file://$PROJECT_DIR$/Gillespie/src/org/devicescourse/examples/Toggle4.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="37" column="13" selection-start="1480" selection-end="1480" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gillespie/src/org/devicescourse/gillespie/Chain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="58" selection-start="1573" selection-end="1573" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -710,13 +647,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gillespie/src/org/devicescourse/BIOE147/Toggle2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="50" selection-start="1769" selection-end="1769" vertical-scroll-proportion="-0.3846154">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gillespie/src/org/devicescourse/examples/Toggle3.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="52" column="29" selection-start="2063" selection-end="2063" vertical-scroll-proportion="0.0">
@@ -724,9 +654,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Gillespie/src/org/devicescourse/gillespie/Reaction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="22" selection-start="1153" selection-end="1153" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gillespie/src/org/devicescourse/gillespie/Specie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="42" selection-start="1603" selection-end="1603" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gillespie/src/org/devicescourse/gillespie/Chain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="155" column="17" selection-start="5205" selection-end="5212" vertical-scroll-proportion="1.48">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gillespie/src/org/devicescourse/BIOE147/Toggle2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="230" column="25" selection-start="8035" selection-end="8035" vertical-scroll-proportion="0.637827">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Gillespie/src/org/devicescourse/BIOE147/Toggle2RNA.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="86" selection-start="1216" selection-end="1216" vertical-scroll-proportion="-7.858757">
+        <state line="274" column="25" selection-start="8252" selection-end="8252" vertical-scroll-proportion="0.4915254">
           <folding />
         </state>
       </provider>
