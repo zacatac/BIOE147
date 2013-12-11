@@ -23,6 +23,7 @@
 
 package org.devicescourse.gillespie;
 
+import java.net.StandardSocketOptions;
 import java.util.HashMap;
 import java.util.HashSet;
 import javax.swing.JOptionPane;
@@ -165,6 +166,7 @@ public class Chain {
 
         //Choose which reaction is next
         for(int NU =0; NU<_reactions.length; NU++) {
+
             int MU = NU;
             SUM = SUM + A[NU];
             if(SUM >= R2A0) {

@@ -41,7 +41,7 @@ public class Toggle2 {
 
     public static void main(String[] args) {
         Toggle2 toggler = new Toggle2();
-        Chain chain = toggler.generateChain(100, 1, 500);
+        Chain chain = toggler.generateChain(1, 100, 50);
         chain.start();
 
         Specie[] proteinsonly = new Specie[3];
@@ -153,10 +153,10 @@ public class Toggle2 {
 
             @Override
             public double calculateQuantities() {
-                double concR = RepR.getValue()/avagadroNumber/volumeOfEcoli;  //Total S protein conc
+                double concR = RepR.getValue()/avagadroNumber/volumeOfEcoli;  //Total R protein conc
                 double dimerR = KeqForRR*concR*concR / (KeqForRR*concR*concR + 1);
                 double probability = Sgene.getValue() * 1 / (1 + KeqForR * dimerR);
-                System.out.println("S Probability: " + probability);
+
                 if(probability < Math.random()) {
                     return 0;
                 }
