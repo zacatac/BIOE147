@@ -78,12 +78,13 @@
 
 \usepackage{graphicx} % Allows including images
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{hyperref}
 
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
 
-\title[RNA circuits]{Riboregulators } % The short title appears at the bottom of every slide, the full title is only on the title page
+\title[RNA circuits]{Self-contained RNA inhibition with self-cleaving ribozymes} % The short title appears at the bottom of every slide, the full title is only on the title page
 
 \author{Zack Field \& Ryan Tsoi} % Your name
 \institute[UC Berkeley] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
@@ -116,11 +117,11 @@ University of California \\ % Your institution for the title page
 \section{Introduction} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
 %------------------------------------------------
 
-\subsection{Biology as engineering discipline} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
+\subsection{Novel Circuits and Systems in Biology} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
 
 \begin{frame}
-\frametitle{Biology as engineering discipline}
-
+\frametitle{}
+            
 
 \end{frame}
 
@@ -131,20 +132,32 @@ University of California \\ % Your institution for the title page
 \begin{frame}
 \frametitle{Motivation}
 
-\begin{itemize}
-\item Invalidation of the Jurrassic Park and NASA discovery based projects.
-\item Proof of functional completeness
-\item (Possibilities discussed later, although implied by completeness) 
+Toggle switch and repressilator in 2000 (images). 
 
-\item technical reasoning for Riboregulators. 
+\begin{figure}[ht]
+  \includegraphics[scale=0.3]{circuit_complexity.png}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+%\frametitle{Motivation}
+Exponential decrease in the cost of enabling technologies should result 
+in exponential growth of circuit complexity. 
+
+\begin{figure}[ht]
+  \includegraphics[scale=0.3]{cost_per_base.png}
+\end{figure}
+
+\begin{block}{Pitfalls in current promoter-repressor pair design}
   \begin{itemize}
-    \item Orthogonal
-    \item Predictable
-    \item Safe
-    \item Independence (special case of orthogonality)
-    \item FILL IN MORE
+    \item Orthogonal  - Limited number (until very recently)
+    \item Predictable - 40 hour toggle switch breakdown 
+    \item Safe        -  
+    \item Reliable -
   \end{itemize}
-\end{itemize}
+\end{block}
+
 \end{frame}
 
 %------------------------------------------------
@@ -166,10 +179,11 @@ Self-contained action. removes some dependencies.
 
 \begin{frame}
 \frametitle{Choice of self-cleaving ribozymes}
+Proof of functional completeness
 
 Include reasoning for not having apatamer effected
 ribozymes. More difficult to design and predict than
-simple oligonucleotide effectors.
+simple oligonucleotide effectors. 
 \end{frame}
 
 %------------------------------------------------
@@ -177,6 +191,9 @@ simple oligonucleotide effectors.
 \subsection{General riboregulation model}
 \begin{frame}
 \frametitle{General riboregulation model}
+
+Gillespie algorithm
+
 \end{frame}
 
 %------------------------------------------------
@@ -200,12 +217,27 @@ simple oligonucleotide effectors.
 \frametitle{Parameter Comparison}
 \end{frame}
 
+
+%------------------------------------------------
+
+\subsection{Sources}
+\begin{frame}
+\frametitle{Souces}
+
+\begin{itemize}
+\item Arkin, A. and Weiss, Ron; Principles of Synthetic Biology Fall 2013; Lecture 3
+\item Carlson, Rob; DNA cost curves; \url{http://www.synthesis.cc/2011/06/new-cost-curves.html}
+\item Stanton, B.C. et. al.; \emph{Genomic Mining of prokaryotic repressors for orthogonal logic gates};
+  \url{http://www.nature.com/nchembio/journal/vaop/ncurrent/full/nchembio.1411.html}
+\item Martin, J.N., et. al.; Lethal toxicity caused by expression of shRNA in the mouse striatum: implications for therapeutic design;
+  \url{http://www.nature.com/gt/journal/v18/n7/full/gt201110a.html}
+\end{itemize}
+\end{frame}
+
 %------------------------------------------------
 \begin{frame}
 \frametitle{Blocks of Highlighted Text}
-\begin{block}{Block 1}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
-\end{block}
+
 
 \begin{block}{Block 2}
 Pellentesque sed tellus purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum quis magna at risus dictum tempor eu vitae velit.
@@ -271,6 +303,9 @@ $E = mc^2$
 \frametitle{Verbatim}
 \begin{example}[Theorem Slide Code]
 \begin{verbatim}
+
+
+
 \begin{frame}
 \frametitle{Theorem}
 \begin{theorem}[Mass--energy equivalence]
