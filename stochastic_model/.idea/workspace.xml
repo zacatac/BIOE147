@@ -4,10 +4,11 @@
     <list default="true" id="656ca557-d979-4eeb-91e9-66e22ff8e3d1" name="Default" comment="" />
     <ignored path="stochastic_model.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Toggle2.java" changelist="656ca557-d979-4eeb-91e9-66e22ff8e3d1" time="1385516031281" ignored="false" />
-    <file path="/Toggle2RNA.java" changelist="656ca557-d979-4eeb-91e9-66e22ff8e3d1" time="1386017239763" ignored="false" />
+    <file path="/Toggle2.java" changelist="656ca557-d979-4eeb-91e9-66e22ff8e3d1" time="1386648482834" ignored="false" />
+    <file path="/Toggle2RNA.java" changelist="656ca557-d979-4eeb-91e9-66e22ff8e3d1" time="1386721835210" ignored="false" />
     <file path="/Chain.java" changelist="656ca557-d979-4eeb-91e9-66e22ff8e3d1" time="1385525457701" ignored="false" />
-    <file path="/fragment.java" changelist="656ca557-d979-4eeb-91e9-66e22ff8e3d1" time="1386014930697" ignored="false" />
+    <file path="/fragment.java" changelist="656ca557-d979-4eeb-91e9-66e22ff8e3d1" time="1386647328364" ignored="false" />
+    <file path="/Dummy.txt" changelist="656ca557-d979-4eeb-91e9-66e22ff8e3d1" time="1386647327224" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +23,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -59,6 +59,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -82,7 +83,7 @@
           <file leaf-file-name="Chain.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Gillespie/src/org/devicescourse/gillespie/Chain.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="155" column="17" selection-start="5205" selection-end="5212" vertical-scroll-proportion="1.48">
+                <state line="155" column="17" selection-start="5205" selection-end="5212" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -91,7 +92,7 @@
           <file leaf-file-name="Toggle2.java" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Gillespie/src/org/devicescourse/BIOE147/Toggle2.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="230" column="25" selection-start="8035" selection-end="8035" vertical-scroll-proportion="0.637827">
+                <state line="185" column="66" selection-start="6852" selection-end="6852" vertical-scroll-proportion="0.16853933">
                   <folding />
                 </state>
               </provider>
@@ -104,8 +105,10 @@
           <file leaf-file-name="Toggle2RNA.java" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Gillespie/src/org/devicescourse/BIOE147/Toggle2RNA.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="274" column="25" selection-start="8252" selection-end="8252" vertical-scroll-proportion="0.4915254">
-                  <folding />
+                <state line="48" column="48" selection-start="1708" selection-end="1708" vertical-scroll-proportion="0.41379312">
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -134,8 +137,8 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1280" />
-    <option name="height" value="800" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -163,7 +166,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -269,6 +271,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -352,26 +355,32 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="Toggle2RNA" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="org.devicescourse.BIOE147.Toggle2RNA" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="Gillespie" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
       <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
       <method />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
@@ -456,20 +465,57 @@
       <patterns />
       <method />
     </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Toggle2RNA" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.devicescourse.BIOE147.Toggle2RNA" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Gillespie" />
+      <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.Toggle6" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Toggle5" />
-      <item index="2" class="java.lang.String" itemvalue="Application.Toggle4" />
-      <item index="3" class="java.lang.String" itemvalue="Application.Toggle2" />
-      <item index="4" class="java.lang.String" itemvalue="Application.Toggle2RNA" />
+      <item index="0" class="java.lang.String" itemvalue="Application.Toggle2RNA" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Toggle6" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Toggle5" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Toggle4" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Toggle2" />
     </list>
     <recent_temporary>
-      <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.Toggle2RNA" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Application.Toggle2" />
         <item index="1" class="java.lang.String" itemvalue="Application.Toggle2" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Toggle2" />
-        <item index="3" class="java.lang.String" itemvalue="Application.Toggle4" />
-        <item index="4" class="java.lang.String" itemvalue="Application.Toggle5" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Toggle4" />
+        <item index="3" class="java.lang.String" itemvalue="Application.Toggle5" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -487,24 +533,24 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39918533" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32892057" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.8352535" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1337115" sideWeight="0.76638174" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23361823" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13340448" sideWeight="0.76680243" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23319755" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -577,6 +623,15 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Gillespie/src/org/devicescourse/BIOE147/Toggle2RNA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Gillespie/src/org/devicescourse/gillespie/Specie.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="41" column="42" selection-start="1603" selection-end="1603" vertical-scroll-proportion="0.0">
@@ -633,13 +688,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gillespie/src/org/devicescourse/examples/Toggle2RNA.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="116" column="33" selection-start="3775" selection-end="3775" vertical-scroll-proportion="-3.7908745">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gillespie/src/org/devicescourse/examples/Toggle1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="36" column="13" selection-start="1486" selection-end="1486" vertical-scroll-proportion="0.0">
@@ -670,22 +718,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Gillespie/src/org/devicescourse/gillespie/Chain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="155" column="17" selection-start="5205" selection-end="5212" vertical-scroll-proportion="1.48">
+        <state line="155" column="17" selection-start="5205" selection-end="5212" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Gillespie/src/org/devicescourse/BIOE147/Toggle2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="230" column="25" selection-start="8035" selection-end="8035" vertical-scroll-proportion="0.637827">
+        <state line="185" column="66" selection-start="6852" selection-end="6852" vertical-scroll-proportion="0.16853933">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Gillespie/src/org/devicescourse/BIOE147/Toggle2RNA.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="274" column="25" selection-start="8252" selection-end="8252" vertical-scroll-proportion="0.4915254">
-          <folding />
+        <state line="48" column="48" selection-start="1708" selection-end="1708" vertical-scroll-proportion="0.41379312">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

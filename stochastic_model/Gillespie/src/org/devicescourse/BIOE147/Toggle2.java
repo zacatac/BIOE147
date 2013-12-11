@@ -156,6 +156,7 @@ public class Toggle2 {
                 double concR = RepR.getValue()/avagadroNumber/volumeOfEcoli;  //Total S protein conc
                 double dimerR = KeqForRR*concR*concR / (KeqForRR*concR*concR + 1);
                 double probability = Sgene.getValue() * 1 / (1 + KeqForR * dimerR);
+                System.out.println("S Probability: " + probability);
                 if(probability < Math.random()) {
                     return 0;
                 }
