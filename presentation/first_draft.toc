@@ -12,4 +12,3 @@
 \beamer@subsectionintoc {2}{6}{Riboregulatory Repressilator}{13}{0}{2}
 \beamer@subsectionintoc {2}{7}{Repressilator Comparison}{14}{0}{2}
 \beamer@sectionintoc {3}{Implications and further work}{15}{0}{3}
-\beamer@subsectionintoc {3}{1}{Sources}{17}{0}{3}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  12 DEC 2013 07:08
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  12 DEC 2013 07:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1478,20 +1478,20 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 ] [3
 
 ]
-<DNA_toggle.png, id=191, 1267.73625pt x 471.7625pt>
+<DNA_toggle.png, id=185, 1267.73625pt x 471.7625pt>
 File: DNA_toggle.png Graphic file (type png)
  <use DNA_toggle.png>
 Package pdftex.def Info: DNA_toggle.png used on input line 166.
 (pdftex.def)             Requested size: 171.14764pt x 63.68518pt.
 
-<circuit_complexity.png, id=192, 896.34875pt x 441.65pt>
+<circuit_complexity.png, id=186, 896.34875pt x 441.65pt>
 File: circuit_complexity.png Graphic file (type png)
 
 <use circuit_complexity.png>
 Package pdftex.def Info: circuit_complexity.png used on input line 166.
 (pdftex.def)             Requested size: 171.14764pt x 84.32544pt.
 
-<repressilator.png, id=193, 602.25pt x 106.3975pt>
+<repressilator.png, id=187, 602.25pt x 106.3975pt>
 File: repressilator.png Graphic file (type png)
  <use repressilator.png>
 Package pdftex.def Info: repressilator.png used on input line 166.
@@ -1500,7 +1500,7 @@ Package pdftex.def Info: repressilator.png used on input line 166.
 [4
 
  <./DNA_toggle.png> <./circuit_complexity.png> <./repressilator.png>]
-<cost_per_base.png, id=221, 492.3996pt x 411.4572pt>
+<cost_per_base.png, id=215, 492.3996pt x 411.4572pt>
 File: cost_per_base.png Graphic file (type png)
  <use cost_per_base.png>
 Package pdftex.def Info: cost_per_base.png used on input line 177.
@@ -1511,21 +1511,21 @@ Package pdftex.def Info: cost_per_base.png used on input line 177.
  <./cost_per_base.png>] [6
 
 ]
-<riboregulation.png, id=277, 565.11125pt x 710.655pt>
+<riboregulation.png, id=271, 565.11125pt x 710.655pt>
 File: riboregulation.png Graphic file (type png)
  <use riboregulation.png>
 Package pdftex.def Info: riboregulation.png used on input line 204.
-(pdftex.def)             Requested size: 136.91603pt x 172.17639pt.
+(pdftex.def)             Requested size: 171.14764pt x 215.2259pt.
 
-<energy_riboregulation.png, id=278, 249.0906pt x 145.5036pt>
+<energy_riboregulation.png, id=272, 249.0906pt x 145.5036pt>
 File: energy_riboregulation.png Graphic file (type png)
 
 <use energy_riboregulation.png>
 Package pdftex.def Info: energy_riboregulation.png used on input line 204.
-(pdftex.def)             Requested size: 171.14764pt x 99.97797pt.
+(pdftex.def)             Requested size: 154.03183pt x 89.97816pt.
  [7
 
- <./riboregulation.png> <./energy_riboregulation.png>] <functional.png, id=307,
+ <./riboregulation.png> <./energy_riboregulation.png>] <functional.png, id=301,
  740.7675pt x 336.25626pt>
 File: functional.png Graphic file (type png)
 
@@ -1539,7 +1539,7 @@ Package pdftex.def Info: functional.png used on input line 226.
 ] [10
 
 ]
-<RNA_based_toggle_timecourse.png, id=390, 692.5875pt x 503.8825pt>
+<RNA_based_toggle_timecourse.png, id=384, 692.5875pt x 503.8825pt>
 File: RNA_based_toggle_timecourse.png Graphic file (type png)
 
 <use RNA_based_toggle_timecourse.png>
@@ -1554,14 +1554,14 @@ Overfull \hbox (36.6302pt too wide) in paragraph at lines 350--350
 [11
 
  <./RNA_based_toggle_timecourse.png>]
-<repressilator_plasmids.png, id=416, 914.41624pt x 598.235pt>
+<repressilator_plasmids.png, id=410, 914.41624pt x 598.235pt>
 File: repressilator_plasmids.png Graphic file (type png)
 
 <use repressilator_plasmids.png>
 Package pdftex.def Info: repressilator_plasmids.png used on input line 359.
 (pdftex.def)             Requested size: 171.14764pt x 111.96796pt.
 
-<repressilator_time.png, id=417, 685.56125pt x 260.975pt>
+<repressilator_time.png, id=411, 685.56125pt x 260.975pt>
 File: repressilator_time.png Graphic file (type png)
 
 <use repressilator_time.png>
@@ -1570,7 +1570,7 @@ Package pdftex.def Info: repressilator_time.png used on input line 359.
  [12
 
  <./repressilator_plasmids.png> <./repressilator_time.png>] <repress_graph.png,
- id=443, 504.88625pt x 397.485pt>
+ id=437, 504.88625pt x 397.485pt>
 File: repress_graph.png Graphic file (type png)
 
 <use repress_graph.png>
@@ -1586,7 +1586,7 @@ Overfull \hbox (30.80327pt too wide) in paragraph at lines 436--436
  <./repress_graph.png>] [14
 
 ]
-<repress_4and.png, id=496, 909.3975pt x 588.1975pt>
+<repress_4and.png, id=490, 909.3975pt x 588.1975pt>
 File: repress_4and.png Graphic file (type png)
  <use repress_4and.png>
 Package pdftex.def Info: repress_4and.png used on input line 475.
@@ -1601,7 +1601,7 @@ Missing character: There is no â in font cmss10!
 Missing character: There is no € in font cmss10!
 Missing character: There is no “ in font cmss10!
 
-Overfull \vbox (76.56288pt too high) detected at line 510
+Overfull \vbox (76.56288pt too high) detected at line 509
  []
 
 [17
@@ -1618,25 +1618,25 @@ Overfull \vbox (76.56288pt too high) detected at line 510
 \tf@snm=\write9
 \openout9 = `first_draft.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 532.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 532.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 531.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 531.
  (./first_draft.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 532.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 532.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 531.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 531.
 Package rerunfilecheck Info: File `first_draft.out' has not changed.
-(rerunfilecheck)             Checksum: 7EC6F746E82C1A8EA8C03FBCDC6796A3;981.
+(rerunfilecheck)             Checksum: F8BBE5BE1AD303AF3B06DC97CD95A49F;923.
 
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 532.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 531.
  ) 
 Here is how much of TeX's memory you used:
- 29091 strings out of 493315
- 616466 string characters out of 6137904
- 693174 words of memory out of 5000000
- 31885 multiletter control sequences out of 15000+600000
+ 29087 strings out of 493315
+ 616418 string characters out of 6137904
+ 693157 words of memory out of 5000000
+ 31882 multiletter control sequences out of 15000+600000
  11669 words of font info for 44 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  49i,16n,100p,407b,930s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1652,10 +1652,10 @@ local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/l
 ocal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/lo
 cal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/loca
 l/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on first_draft.pdf (18 pages, 1094721 bytes).
+Output written on first_draft.pdf (18 pages, 1094456 bytes).
 PDF statistics:
- 663 PDF objects out of 1000 (max. 8388607)
- 598 compressed objects within 6 object streams
- 51 named destinations out of 1000 (max. 500000)
- 257 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 658 PDF objects out of 1000 (max. 8388607)
+ 593 compressed objects within 6 object streams
+ 50 named destinations out of 1000 (max. 500000)
+ 249 words of extra memory for PDF output out of 10000 (max. 10000000)
 
