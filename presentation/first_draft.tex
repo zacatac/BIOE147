@@ -82,6 +82,7 @@
 \usetikzlibrary{arrows,shapes,matrix,positioning}
 \usepackage{chemfig,siunitx}
 \setcompoundsep{7em}
+\usepackage{algorithm,algorithmic}
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
@@ -169,9 +170,10 @@ Toggle switch and repressilator in 2000 (images).
 Exponential decrease in the cost of enabling technologies should result 
 in exponential growth of circuit complexity.
 
-
+\begin{figure}
+  \centering
   \includegraphics[scale=0.5]{cost_per_base.png}
-  
+\end{figure}
 \end{frame}
 
 \begin{frame}
@@ -190,29 +192,35 @@ in exponential growth of circuit complexity.
 
 %------------------------------------------------
 
-\subsection{Types of riboregulation}
+\subsection{Possible non-coding RNA tools}
 \begin{frame}
-\frametitle{Types of riboregulation}
+\frametitle{Signal Transduction with RNA, possible tools}
 
-Why shRNA sucks, because of cleaving mechanism. But this can
-be avoided.
-
-Self-contained action. removes some dependencies.
-\includegraphics[scale=1]{energy_riboregulation.png}
-
+\begin{figure}
+\includegraphics[width=0.4\textwidth]{riboregulation.png}
+\hfill
+\includegraphics[width=0.5\textwidth]{energy_riboregulation.png}
+\end{figure}
 \end{frame}
 
 %------------------------------------------------
-\section{Specific riboregulation decision}
+\section{Riboregulation decision}
 \subsection{Choice of ribozyme}
 
-\begin{frame}
-\frametitle{Choice of trans-acting ribozymes}
-Proof of functional completeness
 
-Include reasoning for not having apatamer effected
-ribozymes. More difficult to design and predict than
-simple oligonucleotide effectors. 
+\begin{frame}
+\frametitle{Choice of trans-cleaving  hammerhead ribozymes}
+
+Self-contained mechanism of RNA degradation
+
+Composable and functionally complete 
+
+\begin{figure}
+  \includegraphics[scale=0.25]{functional.png}
+\end{figure}
+
+Base-pairing rather than aptamer coupling for 
+ease of rational design
 
 Watson Crick base pairing dominates free energy minimization
 \end{frame}
@@ -222,11 +230,77 @@ Watson Crick base pairing dominates free energy minimization
 \subsection{General riboregulation model}
 \begin{frame}
 \frametitle{General riboregulation model}
+
 Stochastic model - Gillespie algorithm
 
-The probability 
 
-Rate of trans cleaving
+\begin{algorithm}[H]
+\begin{algorithmic}[1]
+  \STATE{{\bf Inputs:} }
+  \STATE{Set of $M$ reactions and $avg\_Prob[]=c$; $R_i=(c_{i}) i\in{1,\ldots,M}$}
+  \STATE{Initial population sizes, $endtime$}
+  \STATE{{\bf Output:} Catalog of Molecular events}
+  \WHILE{$\tau < endtime$}
+  \STATE $a_{0} = 0$
+  \FOR{$i=1$ to $M$}
+  \STATE $a_{i} = h_ic_i$, where $h_i$ is the amount of reactant
+  \STATE $a_0 += a_{i}$
+  \ENDFOR
+  \STATE $(\tau,\mu) \leftarrow P(\tau,\mu)$
+  \STATE updatePopulation($R_{\mu}$)
+  \ENDWHILE
+\end{algorithmic}
+\caption{Gillespie}
+\end{algorithm}
+
+\end{frame}
+
+%------------------------------------------------
+
+\subsection{Model and Kinetics of trans-cleaving ribozyme}
+\begin{frame}
+\frametitle{trans-cleaving ribozyme model and kinetics}
+
+From Samarsky \emph{et al.} 
+
+\scalebox{0.7}{
+  \schemestart
+  $A_{DNA}$
+  \arrow{->[$k_{tc_a}$]}
+  $A_{RNA}$
+  ,
+  $B_{DNA}$
+  \arrow{->[$k_{tc_b}$]}
+  $B_{RNA}$
+  \schemestop
+}
+
+\bigskip
+
+\scalebox{0.7}{
+  \schemestart
+  $A_{RNA} + B_{RNA}$
+  \arrow{<=>[$k_1$][$k_{-1}$]}
+  $A_{RNA}\cdot B_{RNA}$
+  \arrow{->[$k_2$]}
+  $A_{RNA}\cdot F_1 \cdot F_2$
+  \arrow{->[$k_3$]}
+  $A_{RNA}+F_1'$
+  \schemestop
+}
+
+\bigskip 
+
+All species undergo degradation at some rate $k_{deg}$.
+
+\bigskip
+
+MM kinetics
+
+Fraction of substrate/time: $k_{obs} = k_2 \times [A_{RNA}\cdot B_{RNA}]/[B_{RNA_{0}}]$
+
+$k_3>>k_2>>k_{deg}$ by single orders of magnitude. 
+
 \end{frame}
 
 %------------------------------------------------
@@ -276,10 +350,109 @@ No possible bistable point. First limitation.
 \end{frame}
 
 %------------------------------------------------
-
-\subsection{Parameter Comparison}
+\subsection{Classic Repressilator}
 \begin{frame}
-\frametitle{Parameter Comparison}
+\frametitle{Classic Repressilator}
+\includegraphics[width=0.5\textwidth]{repressilator_plasmids.png}
+\hfill
+\includegraphics[width=0.5\textwidth]{repressilator_time.png}
+\end{frame}
+%------------------------------------------------
+
+\subsection{Riboregulatory Repressilator}
+\begin{frame}
+\frametitle{Riboregulatory Repressilator}
+
+\begin{columns}[T]
+  \begin{column}{0.5\textwidth}      
+    \centering
+       \includegraphics[scale=0.4]{repress_graph.png}
+    \end{column}    
+    \begin{column}{0.4\textwidth}
+      \centering
+      \scalebox{0.4}{
+      \schemestart
+      $a_{DNA}$%\phantom{I}
+      \arrow{->[$k_{a_{tc}}$]}
+      $a_{RNA}$\phantom{}
+      \arrow{->[$k_{deg_a}$]}
+      $\emptyset$
+      \schemestop    
+      }
+
+      \scalebox{0.4}{
+        \schemestart
+        $b_{DNA}$%\phantom{I}
+        \arrow{->[$k_{b_{tc}}$]}
+        $b_{RNA}$\phantom{}
+        \arrow{->[$k_{deg_b}$]}
+        $\emptyset$
+        \schemestop
+      }
+
+      \scalebox{0.4}{
+        \schemestart
+        $c_{DNA}$%\phantom{I}
+        \arrow{->[$k_{c_{tc}}$]}
+        $c_{RNA}$\phantom{}
+        \arrow{->[$k_{deg_c}$]}
+        $\emptyset$
+        \schemestop
+      }
+
+      \scalebox{0.4}{
+        \schemestart
+        $a_{RNA}+b_{RNA}$%\phantom{I}
+        \arrow{<=>[$k_{on_{ab}}$][$k_{off_{ab}}$]}
+        $a_{RNA}\cdot b_{RNA}$\phantom{}
+        \arrow{->[$k_{cleave_{a}}$]}
+        $a_{RNA}$
+        \schemestop
+      }
+
+      \scalebox{0.4}{
+        \schemestart
+        $b_{RNA}+c_{RNA}$%\phantom{I}
+        \arrow{<=>[$k_{on_{bc}}$][$k_{off_{bc}}$]}
+        $b_{RNA}\cdot c_{RNA}$\phantom{}
+        \arrow{->[$k_{cleave_{b}}$]}
+        $b_{RNA}$
+        \schemestop
+      }
+
+      \scalebox{0.4}{
+        \schemestart
+        $c_{RNA}+a_{RNA}$%\phantom{I}
+        \arrow{<=>[$k_{on_{ca}}$][$k_{off_{ca}}$]}
+        $c_{RNA}\cdot a_{RNA}$\phantom{}
+        \arrow{->[$k_{cleave_{c}}$]}
+        $c_{RNA}$
+        \schemestop
+      }
+
+    \end{column}    
+  \end{columns}
+
+\end{frame}
+%------------------------------------------------
+
+\subsection{Repressilator Comparison}
+\begin{frame}
+\frametitle{Repressilator Comparison}
+
+Rate of oscillation 
+
+Tunable:
+\begin{itemize}
+ \item promoter strength
+
+ \item  strength of binding
+
+ \item  cleavage rate - fairly fixed 
+ 
+ \item degradation rate
+
+\end{itemize}
 
 
 \end{frame}
@@ -289,9 +462,29 @@ No possible bistable point. First limitation.
 \section{Implications and further work}
 \begin{frame}
 \frametitle{Implications and further work}
-If these 
+
+Biocircuit-Design Automation,
+
+Biocompiler
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.2]{repress_4and.png}
+\end{figure}
+
 \end{frame}
 
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Thanks!}
+
+Thanks to Sergey and Jeremy for their feedback and help throughout the course
+
+Thanks to Adam and Ron for all your time and for giving us a solid synbio foundation
+
+And thanks to Leslie for working out the logistics
+\end{frame}
 %------------------------------------------------
 
 \subsection{Sources}
@@ -302,34 +495,21 @@ If these
 \item Pray, L. A.; \url{http://www.nature.com/scitable/topicpage/eukaryotic-genome-complexity-437}
 \item Arkin, A. and Weiss, Ron; Principles of Synthetic Biology Fall 2013; Lecture 3
 \item Carlson, Rob; DNA cost curves; \url{http://www.synthesis.cc/2011/06/new-cost-curves.html}
-\item Stanton, B.C. et. al.; \emph{Genomic Mining of prokaryotic repressors for orthogonal logic gates};
+\item Stanton, B.C. et al.; \emph{Genomic Mining of prokaryotic repressors for orthogonal logic gates};
   \url{http://www.nature.com/nchembio/journal/vaop/ncurrent/full/nchembio.1411.html}
-\item Martin, J.N., et. al.; Lethal toxicity caused by expression of shRNA in the mouse striatum: implications for therapeutic design;
+\item Martin, J.N., et al.; Lethal toxicity caused by expression of shRNA in the mouse striatum: implications for therapeutic design;
   \url{http://www.nature.com/gt/journal/v18/n7/full/gt201110a.html}
 \item Bongarets; \emph{GFP as a Marker for Conditional Gene Expression in Bacterial Cells}
   \url{http://www.ifr.ac.uk/Safety/molmicro/pubs/bongaerts2002.pdf}
 \item Anderson, J.C.; \emph{org.devicecourse Gillespie module}
 \item Gillespie, Daniel T. (1977). \emph{Exact Stochastic Simulation of Coupled Chemical Reactions}. The Journal of Physical Chemistry 81 (25): 2340–2361. doi:10.1021/j100540a008.
+\item Samarsky et al.; \emph{A small nucleolar RNA:ribozyme hybrid cleaves a nucleolar RNA
+target in vivo with near-perfect efficiency}; \url{http://www.pnas.org/content/96/12/6609.full.pdf}
 \end{itemize}
 
 \end{frame}
 
 %------------------------------------------------
-\begin{frame}
-\frametitle{Blocks of Highlighted Text}
-
-
-\begin{block}{Block 2}
-Pellentesque sed tellus purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum quis magna at risus dictum tempor eu vitae velit.
-\end{block}
-
-\begin{block}{Block 3}
-Suspendisse tincidunt sagittis gravida. Curabitur condimentum, enim sed venenatis rutrum, ipsum neque consectetur orci, sed blandit justo nisi ac lacus.
-\end{block}
-\end{frame}
-
-%------------------------------------------------
-
 \begin{frame}
 \frametitle{Multiple Columns}
 \begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
@@ -348,91 +528,5 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ul
 \end{columns}
 \end{frame}
 
-%------------------------------------------------
-\section{Second Section}
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Table}
-\begin{table}
-\begin{tabular}{l l l}
-\toprule
-\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
-\midrule
-Treatment 1 & 0.0003262 & 0.562 \\
-Treatment 2 & 0.0015681 & 0.910 \\
-Treatment 3 & 0.0009271 & 0.296 \\
-\bottomrule
-\end{tabular}
-\caption{Table caption}
-\end{table}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Theorem}
-\begin{theorem}[Mass--energy equivalence]
-$E = mc^2$
-\end{theorem}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
-\frametitle{Verbatim}
-\begin{example}[Theorem Slide Code]
-\begin{verbatim}
-
-
-
-\begin{frame}
-\frametitle{Theorem}
-\begin{theorem}[Mass--energy equivalence]
-$E = mc^2$
-\end{theorem}
-\end{frame}\end{verbatim}
-\end{example}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Figure}
-Uncomment the code on this slide to include your own image from the same directory as the template .TeX file.
-%\begin{figure}
-%\includegraphics[width=0.8\linewidth]{test}
-%\end{figure}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
-\frametitle{Citation}
-An example of the \verb|\cite| command to cite within the presentation:\\~
-
-This statement requires citation \cite{p1}.
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{References}
-\footnotesize{
-\begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
-\bibitem[Smith, 2012]{p1} John Smith (2012)
-\newblock Title of the publication
-\newblock \emph{Journal Name} 12(3), 45 -- 678.
-\end{thebibliography}
-}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\Huge{\centerline{The End}}
-\end{frame}
-
-%----------------------------------------------------------------------------------------
 
 \end{document} 

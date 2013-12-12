@@ -47,15 +47,18 @@ public class RepressillatorRNA{
 
     public static void main(String[] args){
         RepressillatorRNA repressillatorRNA = new RepressillatorRNA();
-        Chain chain = repressillatorRNA.generateChain(100,1,1,1);
+        Chain chain = repressillatorRNA.generateChain(20,1,1,100);
 
         chain.start();
 
-        Specie[] RNAandProtein = new  Specie[4];
+        Specie[] RNAandProtein = new  Specie[3];
         RNAandProtein[0] = chain.getSpecie("aRNA");
         RNAandProtein[1] = chain.getSpecie("bRNA");
         RNAandProtein[2] = chain.getSpecie("cRNA");
-        RNAandProtein[3] = chain.getSpecie("G");
+        //RNAandProtein[3] = chain.getSpecie("G");
+        //RNAandProtein[4] = chain.getSpecie("abRNA");
+        //RNAandProtein[5] = chain.getSpecie("bcRNA");
+        //RNAandProtein[6] = chain.getSpecie("caRNA");
 
 
         new PlotSpecies(RNAandProtein, 50);
@@ -70,6 +73,9 @@ public class RepressillatorRNA{
         final Specie aRNA = new Specie(chain, numaRNA, "aRNA");
         final  Specie bRNA = new Specie(chain, numbRNA, "bRNA");
         final Specie cRNA = new Specie(chain, numcRNA, "cRNA");
+        final Specie abRNA = new Specie(chain, 1, "abRNA");
+        final Specie bcRNA = new Specie(chain, 1, "bcRNA");
+        final Specie caRNA = new Specie(chain, 1, "caRNA");
 
         final Specie Ggene = new Specie(chain, 1, "G gene");
         final Specie aGene = new Specie(chain, 1, "a gene");
@@ -78,7 +84,7 @@ public class RepressillatorRNA{
 
 
         // Create all reactions
-        Reaction[] reactions = new Reaction[10];
+        Reaction[] reactions = new Reaction[19];
 
         /*
         * Generation of GFP from
@@ -161,11 +167,165 @@ public class RepressillatorRNA{
             }
         };
 
+        /*
+        * Production of abRNA
+        */
+
+        reactions[5] = new Reaction() {
+            @Override
+            public void updateValues() {
+                abRNA.increment();
+                aRNA.decrement();
+                bRNA.decrement();
+            }
+
+            @Override
+            public double calculateQuantities() {
+
+                return complexes* aRNA.getValue() * bRNA.getValue();
+            }
+        };
+
+        /*
+        * Production of bcRNA
+        */
+
+        reactions[6] = new Reaction() {
+            @Override
+            public void updateValues() {
+                bcRNA.increment();
+                bRNA.decrement();
+                cRNA.decrement();
+            }
+
+            @Override
+            public double calculateQuantities() {
+
+                return complexes * bRNA.getValue() * cRNA.getValue();
+            }
+        };
+
+        /*
+        * Production of caRNA
+        */
+
+        reactions[7] = new Reaction() {
+            @Override
+            public void updateValues() {
+                caRNA.increment();
+                cRNA.decrement();
+                aRNA.decrement();
+            }
+
+            @Override
+            public double calculateQuantities() {
+
+                return complexes * cRNA.getValue() * aRNA.getValue();
+            }
+        };
+
+        /*
+        * Cleaving of bRNA
+        */
+
+        reactions[8] = new Reaction() {
+            @Override
+            public void updateValues() {
+                abRNA.decrement();
+                aRNA.increment();
+                bRNA.decrement();
+            }
+
+            @Override
+            public double calculateQuantities() {
+                return Deg_cleaving_rate * abRNA.getValue();
+            }
+        };
+
+        /*Decomplex abRNA*/
+        reactions[9] = new Reaction() {
+            @Override
+            public void updateValues() {
+                abRNA.decrement();
+                aRNA.increment();
+                bRNA.increment();
+            }
+
+            @Override
+            public double calculateQuantities() {
+                return decomplex * abRNA.getValue();
+            }
+        };
+
+        /*Decomplex bcRNA*/
+        reactions[10] = new Reaction() {
+            @Override
+            public void updateValues() {
+                bcRNA.decrement();
+                bRNA.increment();
+                cRNA.increment();
+            }
+
+            @Override
+            public double calculateQuantities() {
+                return decomplex * bcRNA.getValue();
+            }
+        };
+
+        /*Decomplex caRNA*/
+        reactions[11] = new Reaction() {
+            @Override
+            public void updateValues() {
+                caRNA.decrement();
+                cRNA.increment();
+                aRNA.increment();
+            }
+
+            @Override
+            public double calculateQuantities() {
+                return decomplex * caRNA.getValue();
+            }
+        };
+
+        /*
+        * Cleaving of cRNA
+        */
+
+        reactions[12] = new Reaction() {
+            @Override
+            public void updateValues() {
+                bcRNA.decrement();
+                bRNA.increment();
+                cRNA.decrement();
+            }
+
+            @Override
+            public double calculateQuantities() {
+                return Deg_cleaving_rate * bcRNA.getValue();
+            }
+        };
+
+        /*
+        * Cleaving of aRNA
+        */
+        reactions[13] = new Reaction() {
+            @Override
+            public void updateValues() {
+                caRNA.decrement();
+                cRNA.increment();
+                aRNA.decrement();
+            }
+
+            @Override
+            public double calculateQuantities() {
+                return Deg_cleaving_rate * caRNA.getValue();
+            }
+        };
 
         /*
         * Degradation of aRNA
         */
-        reactions[5] = new Reaction() {
+        reactions[14] = new Reaction() {
             @Override
             public void updateValues() {
                 aRNA.decrement();
@@ -173,21 +333,14 @@ public class RepressillatorRNA{
 
             @Override
             public double calculateQuantities() {
-                //Amount of cRNA
-                double conccRNA = cRNA.getValue()/avagadroNumber/volumeOfEcoli;
-
-                double probabiliy = aRNA.getValue() *  1 / (1 + Ka_CtoA * conccRNA);
-                if(probabiliy < Math.random()) {
                     return DegaRNA * aRNA.getValue();
-                }
-                return DegaRNA * aRNA.getValue() + Deg_cleaving_rate * aRNA.getValue() * cRNA.getValue();
             }
         };
 
        /*
         * Degradation of bRNA
         */
-        reactions[6] = new Reaction() {
+        reactions[15] = new Reaction() {
             @Override
             public void updateValues() {
                 bRNA.decrement();
@@ -195,14 +348,7 @@ public class RepressillatorRNA{
 
             @Override
             public double calculateQuantities() {
-                //Amount of aRNA
-                double concaRNA = aRNA.getValue()/avagadroNumber/volumeOfEcoli;
-
-                double probabiliy = bRNA.getValue() *  1 / (1 + Ka_AtoB* concaRNA);
-                if(probabiliy < Math.random()) {
                     return DegbRNA * bRNA.getValue();
-                }
-                return DegbRNA * bRNA.getValue() + Deg_cleaving_rate * bRNA.getValue() * aRNA.getValue();
             }
         };
 
@@ -210,7 +356,7 @@ public class RepressillatorRNA{
         /*
         * Degradation of gfpRNA
         */
-        reactions[7] = new Reaction() {
+        reactions[16] = new Reaction() {
             @Override
             public void updateValues() {
                 gfpRNA.decrement();
@@ -218,14 +364,7 @@ public class RepressillatorRNA{
 
             @Override
             public double calculateQuantities() {
-                //Amount of aRNA
-                double concaRNA = aRNA.getValue()/avagadroNumber/volumeOfEcoli;
-
-                double probabiliy =  gfpRNA.getValue() * 1 / (1 + Ka_AtoGFP * concaRNA);
-                if(probabiliy < Math.random()) {
                     return DeggfpRNA * gfpRNA.getValue();
-                }
-                return DeggfpRNA * gfpRNA.getValue() + Deg_cleaving_rate * gfpRNA.getValue() * aRNA.getValue();
             }
         };
 
@@ -233,7 +372,7 @@ public class RepressillatorRNA{
        /*
         * Degradation of cRNA
         */
-        reactions[8] = new Reaction() {
+        reactions[17] = new Reaction() {
             @Override
             public void updateValues() {
                 cRNA.decrement();
@@ -241,15 +380,7 @@ public class RepressillatorRNA{
 
             @Override
             public double calculateQuantities() {
-                //Amount of bRNA
-                double concbRNA = bRNA.getValue()/avagadroNumber/volumeOfEcoli;
-
-                double probabiliy = cRNA.getValue() *  1 / (1 + Ka_BtoC * concbRNA);
-                System.out.println("Probability cleave cRNA: " + probabiliy);
-                if(probabiliy < Math.random()) {
-                    return DegcRNA * cRNA.getValue();
-                }
-                return DegcRNA * cRNA.getValue() + Deg_cleaving_rate * cRNA.getValue() * bRNA.getValue();
+                return DegcRNA * cRNA.getValue();
             }
         };
 
@@ -257,7 +388,7 @@ public class RepressillatorRNA{
         /*
         * Degradation of GFP (constitutive)
         */
-        reactions[9]  = new Reaction() {
+        reactions[18]  = new Reaction() {
             @Override
             public void updateValues() {
                 GFP.decrement();
@@ -282,20 +413,23 @@ public class RepressillatorRNA{
 
     double Ka_AtoGFP  = 1E9;      //Binding Keq of aRNA to GFPrna
 
-    double Ka_AtoB = 1E6;
-    double Ka_BtoC = 1E6;
-    double Ka_CtoA = 1E6;
+    double Ka_AtoB = 1E16;
+    double Ka_BtoC = 1E16;
+    double Ka_CtoA = 1E16;
+    double Keq_cleave = 1E9;
 
-    double BetaForaRNA   = 50;   //Formation of aRNA rate
-    double BetaForbRNA   = 50;   //Formation of bRNA rate
-    double BetaForcRNA  = 50;   //Formation of cRNA
-    double BetaForgfpRNA =  20;   //Formation of gfpRNA rate
-    double BetaForGFP    =  0;   //Formation of GFP rate
+    double complexes     =   0.9;    //Formation of complex
+    double decomplex     =   0.1;    //Deforming of complex
+    double BetaForaRNA   = 0.6897;   //Formation of aRNA rate
+        double BetaForbRNA   = 0.6897;   //Formation of bRNA rate
+    double BetaForcRNA   = 0.6897;   //Formation of cRNA
+    double BetaForgfpRNA = 0;        //Formation of gfpRNA rate
+    double BetaForGFP    = 0;        //Formation of GFP rate
 
-    double DegaRNA   =  0.5;         //Degradation of aRNA
-    double DegbRNA   = 0.5;         //Degradation of bRNA
-    double DeggfpRNA = 4.5;         //Degradation of gfpRNA
-    double DegGFP    = 0.5;         //Degradation of GFP
-    double DegcRNA  = 0.5;          //Degradation of abRNA
-    double Deg_cleaving_rate = 0.5;  //cleaving rate
+    double DegaRNA   =  1/220;         //Degradation of aRNA
+    double DegbRNA   =  1/220;         //Degradation of bRNA
+    double DegcRNA  =   1/220;         //Degradation of abRNA
+    double DeggfpRNA = 5;              //Degradation of gfpRNA
+    double DegGFP    = 5;              //Degradation of GFP
+    double Deg_cleaving_rate = 1/60;   //cleaving rate
 }
