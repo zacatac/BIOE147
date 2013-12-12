@@ -23,6 +23,7 @@
 
 package org.devicescourse.BIOE147;
 
+import org.devicescourse.charts.AllSpeciesOverTime;
 import org.devicescourse.charts.PlotSpecies;
 import org.devicescourse.gillespie.Chain;
 import org.devicescourse.gillespie.Reaction;

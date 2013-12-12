@@ -78,20 +78,22 @@
 
 \usepackage{graphicx} % Allows including images
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
-\usepackage{hyperref}
-
+\usepackage{hyperref,tikz}
+\usetikzlibrary{arrows,shapes,matrix,positioning}
+\usepackage{chemfig,siunitx}
+\setcompoundsep{7em}
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
 
-\title[RNA circuits]{Self-contained RNA inhibition with self-cleaving ribozymes} % The short title appears at the bottom of every slide, the full title is only on the title page
+\title[RNA circuits]{Self-contained RNA inhibition with trans-acting ribozymes} % The short title appears at the bottom of every slide, the full title is only on the title page
 
 \author{Zack Field \& Ryan Tsoi} % Your name
 \institute[UC Berkeley] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
 {
 University of California \\ % Your institution for the title page
 \medskip
-\textit{field.zackery@berkeley.edu, } % Your email address
+\textit{field.zackery@berkeley.edu, ryantsoi@berkeley.edu} % Your email address
 }
 \date{\today} % Date, can be changed to a custom date
 
@@ -117,12 +119,29 @@ University of California \\ % Your institution for the title page
 \section{Introduction} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
 %------------------------------------------------
 
-\subsection{Novel Circuits and Systems in Biology} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
+\subsection{Genetic Regulation} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
 
 \begin{frame}
-\frametitle{}
-            
+\frametitle{Promise of Synthetic Biology}
 
+Complexity of eukaryotes $\not\approx$ \# of protein coding genes
+
+\begin{tabular}{l | l | l}
+\hline
+Oryza sativa (rice)& 470 million & 51,00\\
+Gallus gallus (chicken)& 1 billion& 20,000-23,00\\ 
+Canis familiaris (dog)& 2.4 billion& 19,00 \\
+Mus musculus (mouse)& 2.5 billion& 30,00 \\
+Homo sapiens & 2.9 billion& 20,000-25,000\\
+\hline
+\end{tabular}
+
+\bigskip
+The root of complexity is believed to be the regulation of these genes.
+
+However, the creation of novel protein regulatory elements is too difficult.
+
+Re-writers RNA-world may be the key to getting a handle on regulation.           
 \end{frame}
 
 %------------------------------------------------
@@ -132,29 +151,38 @@ University of California \\ % Your institution for the title page
 \begin{frame}
 \frametitle{Motivation}
 
-Toggle switch and repressilator in 2000 (images). 
-
+Toggle switch and repressilator in 2000 (images).
+ 
 \begin{figure}[ht]
-  \includegraphics[scale=0.3]{circuit_complexity.png}
+  \includegraphics[width=0.5\textwidth]{DNA_toggle.png}
+  \hfill
+  \includegraphics[width=0.5\textwidth]{circuit_complexity.png}
 \end{figure}
 
+\begin{figure}[ht]
+  \includegraphics[scale=0.4]{repressilator.png}
+\end{figure}
 \end{frame}
 
 \begin{frame}
 %\frametitle{Motivation}
 Exponential decrease in the cost of enabling technologies should result 
-in exponential growth of circuit complexity. 
+in exponential growth of circuit complexity.
 
-\begin{figure}[ht]
-  \includegraphics[scale=0.3]{cost_per_base.png}
-\end{figure}
 
+  \includegraphics[scale=0.5]{cost_per_base.png}
+  
+\end{frame}
+
+\begin{frame}
 \begin{block}{Pitfalls in current promoter-repressor pair design}
   \begin{itemize}
-    \item Orthogonal  - Limited number (until very recently)
-    \item Predictable - 40 hour toggle switch breakdown 
-    \item Safe        -  
-    \item Reliable -
+    \item Orthogonal  - Limited number of repressors (until very recently)
+    \item Predictable - Gene circuit evolves away
+    \item Safe        - shRNA toxicity in gene therapy
+    \item Reliable    - 40 hour toggle switch breakdown
+    \item Designable  - Protein structure prediction too difficult
+    \item Cooperativity - Unpredictable behavior when juxtaposed
   \end{itemize}
 \end{block}
 
@@ -170,20 +198,23 @@ Why shRNA sucks, because of cleaving mechanism. But this can
 be avoided.
 
 Self-contained action. removes some dependencies.
+\includegraphics[scale=1]{energy_riboregulation.png}
 
 \end{frame}
 
 %------------------------------------------------
 \section{Specific riboregulation decision}
-\subsection{Choice of self-cleaving ribozymes}
+\subsection{Choice of ribozyme}
 
 \begin{frame}
-\frametitle{Choice of self-cleaving ribozymes}
+\frametitle{Choice of trans-acting ribozymes}
 Proof of functional completeness
 
 Include reasoning for not having apatamer effected
 ribozymes. More difficult to design and predict than
 simple oligonucleotide effectors. 
+
+Watson Crick base pairing dominates free energy minimization
 \end{frame}
 
 %------------------------------------------------
@@ -191,23 +222,57 @@ simple oligonucleotide effectors.
 \subsection{General riboregulation model}
 \begin{frame}
 \frametitle{General riboregulation model}
+Stochastic model - Gillespie algorithm
 
-Gillespie algorithm
+The probability 
 
+Rate of trans cleaving
 \end{frame}
 
 %------------------------------------------------
 
-\subsection{Toggle switch model DNA-based}
-\begin{frame}
-\frametitle{Toggle switch model DNA-based}
-\end{frame}
+%\subsection{Toggle switch model DNA-based}
+%\begin{frame}
+%\frametitle{Toggle switch model DNA-based}
+%
+%\end{frame}
 
 %------------------------------------------------
 
 \subsection{Toggle switch model riboregulation}
 \begin{frame}
-\frametitle{Toggle switch model riboregulation}
+  \frametitle{Toggle switch model riboregulation}
+
+No possible bistable point. First limitation.
+
+\begin{columns}[T]
+    \begin{column}{0.5\textwidth}
+      \centering
+       \includegraphics[scale=0.3]{RNA_based_toggle_timecourse.png}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \scalebox{0.5}{
+      \schemestart
+      $a_{DNA}$%\phantom{I}
+      \arrow{->[$k_{a_{tc}}$]}
+      $a_{RNA}$\phantom{}
+      \arrow{<=>[*0$k_{a_{on}}$][*0$k_{a_{off}}$]}[-90]
+      $a_{RNA}\cdot b_{RNA}$
+      \arrow{<=>[*0$k_{b_{on}}$][*0$k_{b_{off}}$]}[-90]
+      $b_{RNA}$
+      \arrow{<-[$k_{b_{tc}}$]}[180]
+      $b_{DNA}$
+      \arrow(@c2--){->[$k_{a_{deg}}$]}
+      $\emptyset$
+      \arrow(@c3--){->[$k_{ab_{deg}}$]}
+      $\emptyset$
+      \arrow(@c4--){->[$k_{b_{deg}}$]}
+      $\emptyset$
+      \schemestop    
+      }
+    \end{column}
+  \end{columns}
 \end{frame}
 
 %------------------------------------------------
@@ -215,8 +280,17 @@ Gillespie algorithm
 \subsection{Parameter Comparison}
 \begin{frame}
 \frametitle{Parameter Comparison}
+
+
 \end{frame}
 
+%------------------------------------------------
+
+\section{Implications and further work}
+\begin{frame}
+\frametitle{Implications and further work}
+If these 
+\end{frame}
 
 %------------------------------------------------
 
@@ -225,13 +299,19 @@ Gillespie algorithm
 \frametitle{Souces}
 
 \begin{itemize}
+\item Pray, L. A.; \url{http://www.nature.com/scitable/topicpage/eukaryotic-genome-complexity-437}
 \item Arkin, A. and Weiss, Ron; Principles of Synthetic Biology Fall 2013; Lecture 3
 \item Carlson, Rob; DNA cost curves; \url{http://www.synthesis.cc/2011/06/new-cost-curves.html}
 \item Stanton, B.C. et. al.; \emph{Genomic Mining of prokaryotic repressors for orthogonal logic gates};
   \url{http://www.nature.com/nchembio/journal/vaop/ncurrent/full/nchembio.1411.html}
 \item Martin, J.N., et. al.; Lethal toxicity caused by expression of shRNA in the mouse striatum: implications for therapeutic design;
   \url{http://www.nature.com/gt/journal/v18/n7/full/gt201110a.html}
+\item Bongarets; \emph{GFP as a Marker for Conditional Gene Expression in Bacterial Cells}
+  \url{http://www.ifr.ac.uk/Safety/molmicro/pubs/bongaerts2002.pdf}
+\item Anderson, J.C.; \emph{org.devicecourse Gillespie module}
+\item Gillespie, Daniel T. (1977). \emph{Exact Stochastic Simulation of Coupled Chemical Reactions}. The Journal of Physical Chemistry 81 (25): 2340–2361. doi:10.1021/j100540a008.
 \end{itemize}
+
 \end{frame}
 
 %------------------------------------------------

@@ -72,9 +72,9 @@ public class PlotSpecies extends JFrame {
                     }
                 }
                 
-		String xAxisTitle= "Time";
-		String yAxisTitle= "Number";
-		String title= "Timecourse plot";
+		String xAxisTitle= "Time (hours)";
+		String yAxisTitle= "Number (molecules)";
+		String title= "RNA-based toggle switch";
 		DataSeries dataSeries = new DataSeries( xAxisLabels, xAxisTitle, yAxisTitle, title );
 
 		double[][] data= new double[_data.length -1][_data[0].length -1];

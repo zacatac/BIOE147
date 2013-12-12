@@ -40,7 +40,7 @@ public class Toggle4 {
     public static void main(String[] args) {
 
         //Do the simulation                   #runs  #bins
-        double[][] out = runEndpointSimulations(100,   10);
+        double[][] out = runEndpointSimulations(100,   100);
 
         //Plot it
         new SimpleScatter(out);
