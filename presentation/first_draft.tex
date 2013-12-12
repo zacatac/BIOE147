@@ -184,7 +184,7 @@ in exponential growth of circuit complexity.
     \item Safe        - shRNA toxicity in gene therapy
     \item Reliable    - 40 hour toggle switch breakdown
     \item Designable  - Protein structure prediction too difficult
-    \item Cooperativity - Unpredictable behavior when juxtaposed
+    \item Composable - Unpredictable behavior when juxtaposed
   \end{itemize}
 \end{block}
 
@@ -213,7 +213,7 @@ in exponential growth of circuit complexity.
 
 Self-contained mechanism of RNA degradation
 
-Composable and functionally complete 
+Composable and functionally complete: NOR gate
 
 \begin{figure}
   \includegraphics[scale=0.25]{functional.png}
@@ -235,9 +235,9 @@ Stochastic model - Gillespie algorithm
 
 
 \begin{algorithm}[H]
-\begin{algorithmic}[1]
+\begin{algorithmic}[]
   \STATE{{\bf Inputs:} }
-  \STATE{Set of $M$ reactions and $avg\_Prob[]=c$; $R_i=(c_{i}) i\in{1,\ldots,M}$}
+  \STATE{Set of $M$ reactions; $R_i=(c_{i}) i\in{1,\ldots,M}$}
   \STATE{Initial population sizes, $endtime$}
   \STATE{{\bf Output:} Catalog of Molecular events}
   \WHILE{$\tau < endtime$}
@@ -295,9 +295,11 @@ All species undergo degradation at some rate $k_{deg}$.
 
 \bigskip
 
-MM kinetics
+Approximated by MM kinetics
 
 Fraction of substrate/time: $k_{obs} = k_2 \times [A_{RNA}\cdot B_{RNA}]/[B_{RNA_{0}}]$
+
+$k_1>>k_{-1}$, and tunable.
 
 $k_3>>k_2>>k_{deg}$ by single orders of magnitude. 
 
@@ -370,7 +372,7 @@ No possible bistable point. First limitation.
     \end{column}    
     \begin{column}{0.4\textwidth}
       \centering
-      \scalebox{0.4}{
+      \scalebox{0.5}{
       \schemestart
       $a_{DNA}$%\phantom{I}
       \arrow{->[$k_{a_{tc}}$]}
@@ -380,7 +382,7 @@ No possible bistable point. First limitation.
       \schemestop    
       }
 
-      \scalebox{0.4}{
+      \scalebox{0.5}{
         \schemestart
         $b_{DNA}$%\phantom{I}
         \arrow{->[$k_{b_{tc}}$]}
@@ -390,7 +392,7 @@ No possible bistable point. First limitation.
         \schemestop
       }
 
-      \scalebox{0.4}{
+      \scalebox{0.5}{
         \schemestart
         $c_{DNA}$%\phantom{I}
         \arrow{->[$k_{c_{tc}}$]}
@@ -400,7 +402,7 @@ No possible bistable point. First limitation.
         \schemestop
       }
 
-      \scalebox{0.4}{
+      \scalebox{0.5}{
         \schemestart
         $a_{RNA}+b_{RNA}$%\phantom{I}
         \arrow{<=>[$k_{on_{ab}}$][$k_{off_{ab}}$]}
@@ -410,7 +412,7 @@ No possible bistable point. First limitation.
         \schemestop
       }
 
-      \scalebox{0.4}{
+      \scalebox{0.5}{
         \schemestart
         $b_{RNA}+c_{RNA}$%\phantom{I}
         \arrow{<=>[$k_{on_{bc}}$][$k_{off_{bc}}$]}
@@ -420,7 +422,7 @@ No possible bistable point. First limitation.
         \schemestop
       }
 
-      \scalebox{0.4}{
+      \scalebox{0.5}{
         \schemestart
         $c_{RNA}+a_{RNA}$%\phantom{I}
         \arrow{<=>[$k_{on_{ca}}$][$k_{off_{ca}}$]}
@@ -444,25 +446,39 @@ Rate of oscillation
 
 Tunable:
 \begin{itemize}
- \item promoter strength
+ \item promoter strength - well characterized process
 
- \item  strength of binding
+ \item  strength of binding - determined by W-C Base-pairing
 
  \item  cleavage rate - fairly fixed 
  
- \item degradation rate
-
+ \item degradation rate - introduction of cleavage sites
 \end{itemize}
-
 
 \end{frame}
 
 %------------------------------------------------
 
-\section{Implications and further work}
-\begin{frame}
-\frametitle{Implications and further work}
+\section{Conclusions and further work}
 
+\begin{frame}
+\frametitle{Conclusions}
+
+\begin{block}{Character of trans-cleaving ribozymes}
+  \begin{itemize}
+    \item Orthogonal  - determined by WC Base-pairing
+    \item Predictable - less stress on cells, cleaving reaction well characterized
+    \item Safe        - mRNA is less persistent, and less chemically reactive 
+    \item Reliable    - still possible for cell to mutate
+    \item Designable  - minimization of free energy based on WC Base-pairing
+    \item Composable  - Unpredictable behavior when juxtaposed
+  \end{itemize}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Further work}
 Biocircuit-Design Automation,
 
 Biocompiler
@@ -508,24 +524,5 @@ target in vivo with near-perfect efficiency}; \url{http://www.pnas.org/content/9
 
 \end{frame}
 
-%------------------------------------------------
-\begin{frame}
-\frametitle{Multiple Columns}
-\begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
-
-\column{.45\textwidth} % Left column and width
-\textbf{Heading}
-\begin{enumerate}
-\item Statement
-\item Explanation
-\item Example
-\end{enumerate}
-
-\column{.5\textwidth} % Right column and width
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
-
-\end{columns}
-\end{frame}
-
-
+%---------------------------------------
 \end{document} 

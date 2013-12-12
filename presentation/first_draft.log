@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  12 DEC 2013 07:22
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  12 DEC 2013 08:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1539,45 +1539,60 @@ Package pdftex.def Info: functional.png used on input line 226.
 ] [10
 
 ]
-<RNA_based_toggle_timecourse.png, id=384, 692.5875pt x 503.8825pt>
+<RNA_based_toggle_timecourse.png, id=383, 692.5875pt x 503.8825pt>
 File: RNA_based_toggle_timecourse.png Graphic file (type png)
 
 <use RNA_based_toggle_timecourse.png>
-Package pdftex.def Info: RNA_based_toggle_timecourse.png used on input line 350
+Package pdftex.def Info: RNA_based_toggle_timecourse.png used on input line 352
 .
 (pdftex.def)             Requested size: 207.77785pt x 151.16591pt.
 
-Overfull \hbox (36.6302pt too wide) in paragraph at lines 350--350
+Overfull \hbox (36.6302pt too wide) in paragraph at lines 352--352
  [][] 
  []
 
 [11
 
  <./RNA_based_toggle_timecourse.png>]
-<repressilator_plasmids.png, id=410, 914.41624pt x 598.235pt>
+<repressilator_plasmids.png, id=409, 914.41624pt x 598.235pt>
 File: repressilator_plasmids.png Graphic file (type png)
 
 <use repressilator_plasmids.png>
-Package pdftex.def Info: repressilator_plasmids.png used on input line 359.
+Package pdftex.def Info: repressilator_plasmids.png used on input line 361.
 (pdftex.def)             Requested size: 171.14764pt x 111.96796pt.
 
-<repressilator_time.png, id=411, 685.56125pt x 260.975pt>
+<repressilator_time.png, id=410, 685.56125pt x 260.975pt>
 File: repressilator_time.png Graphic file (type png)
 
 <use repressilator_time.png>
-Package pdftex.def Info: repressilator_time.png used on input line 359.
+Package pdftex.def Info: repressilator_time.png used on input line 361.
 (pdftex.def)             Requested size: 171.14764pt x 65.152pt.
  [12
 
  <./repressilator_plasmids.png> <./repressilator_time.png>] <repress_graph.png,
- id=437, 504.88625pt x 397.485pt>
+ id=436, 504.88625pt x 397.485pt>
 File: repress_graph.png Graphic file (type png)
 
 <use repress_graph.png>
-Package pdftex.def Info: repress_graph.png used on input line 436.
+Package pdftex.def Info: repress_graph.png used on input line 438.
 (pdftex.def)             Requested size: 201.95091pt x 158.99118pt.
 
-Overfull \hbox (30.80327pt too wide) in paragraph at lines 436--436
+Overfull \hbox (30.80327pt too wide) in paragraph at lines 438--438
+ [][] 
+ []
+
+
+Overfull \hbox (9.92282pt too wide) in paragraph at lines 438--438
+ [][] 
+ []
+
+
+Overfull \hbox (9.7251pt too wide) in paragraph at lines 438--438
+ [][] 
+ []
+
+
+Overfull \hbox (8.93427pt too wide) in paragraph at lines 438--438
  [][] 
  []
 
@@ -1585,28 +1600,28 @@ Overfull \hbox (30.80327pt too wide) in paragraph at lines 436--436
 
  <./repress_graph.png>] [14
 
+] [15
+
 ]
-<repress_4and.png, id=490, 909.3975pt x 588.1975pt>
+<repress_4and.png, id=515, 909.3975pt x 588.1975pt>
 File: repress_4and.png Graphic file (type png)
  <use repress_4and.png>
-Package pdftex.def Info: repress_4and.png used on input line 475.
+Package pdftex.def Info: repress_4and.png used on input line 491.
 (pdftex.def)             Requested size: 181.87628pt x 117.6374pt.
 
-[15
+[16
 
- <./repress_4and.png>] [16
+ <./repress_4and.png>] [17
 
 ]
 Missing character: There is no â in font cmss10!
 Missing character: There is no € in font cmss10!
 Missing character: There is no “ in font cmss10!
 
-Overfull \vbox (76.56288pt too high) detected at line 509
+Overfull \vbox (76.56288pt too high) detected at line 525
  []
 
-[17
-
-] [18
+[18
 
 ]
 \tf@nav=\write7
@@ -1618,26 +1633,26 @@ Overfull \vbox (76.56288pt too high) detected at line 509
 \tf@snm=\write9
 \openout9 = `first_draft.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 531.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 531.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 528.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 528.
  (./first_draft.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 531.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 531.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 528.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 528.
 Package rerunfilecheck Info: File `first_draft.out' has not changed.
-(rerunfilecheck)             Checksum: F8BBE5BE1AD303AF3B06DC97CD95A49F;923.
+(rerunfilecheck)             Checksum: 0CBC5DCB8E2F21A7B334B314A4D02670;922.
 
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 531.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 528.
  ) 
 Here is how much of TeX's memory you used:
- 29087 strings out of 493315
- 616418 string characters out of 6137904
- 693157 words of memory out of 5000000
- 31882 multiletter control sequences out of 15000+600000
- 11669 words of font info for 44 fonts, out of 8000000 for 9000
+ 29067 strings out of 493315
+ 615858 string characters out of 6137904
+ 693156 words of memory out of 5000000
+ 31863 multiletter control sequences out of 15000+600000
+ 11363 words of font info for 43 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  49i,16n,100p,407b,930s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
@@ -1645,17 +1660,16 @@ Here is how much of TeX's memory you used:
 /usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></
 usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></u
 sr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr
-/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/l
-ocal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/
-local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/
-local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/l
-ocal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/lo
-cal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/loca
-l/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on first_draft.pdf (18 pages, 1094456 bytes).
+/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></us
+r/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></us
+r/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr
+/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/
+local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/lo
+cal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on first_draft.pdf (18 pages, 1085764 bytes).
 PDF statistics:
- 658 PDF objects out of 1000 (max. 8388607)
- 593 compressed objects within 6 object streams
+ 654 PDF objects out of 1000 (max. 8388607)
+ 590 compressed objects within 6 object streams
  50 named destinations out of 1000 (max. 500000)
  249 words of extra memory for PDF output out of 10000 (max. 10000000)
 
