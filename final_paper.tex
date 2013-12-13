@@ -265,14 +265,16 @@ We model both circuits stochastically, and optimized tunable parameters to give 
 Using both models, we test hypotheses concerning the ideal design principles mentioned 
 previously and reach conclusions for the advantages of each type of circuit.
 
+\begin{figure}
+  \includegraphics[scale=0.5]{cis_trans.gif}
+\end{figure}
+
 %------------------------------------------------
 
 \section{Results}
 
 
 \subsection{Implementation of RNA Toggle Switch Using trans-cleaving hammerhead ribozymes}
-
-
 Two hammerhead ribozymes with corresponding cleavage sites on the opposing 
 ribozymes were computationally designed for transcription in Escherichia coli 
 and stochastically modeled in Java using the Gillespie algorithm in order to 
@@ -288,6 +290,59 @@ over the course of the reaction due to high RNA production and degradation rates
 relative to proteins. The system also lacked memory, a key characteristic of the 
 toggle switch, which limited our designed circuit from being a true analog to the toggle circuit.
 
+
+
+\begin{figure}
+  \label{fig2}
+  \centering
+      \scalebox{0.6}{
+      \schemestart
+      $a_{DNA}$%\phantom{I}
+      \arrow{->[$k_{a_{tc}}$]}
+      $a_{RNA}$\phantom{}
+      \arrow{<=>[*0$k_{a_{on}}$][*0$k_{a_{off}}$]}[-90]
+      $a_{RNA}\cdot b_{RNA}$
+      \arrow{<=>[*0$k_{b_{on}}$][*0$k_{b_{off}}$]}[-90]
+      $b_{RNA}$
+      \arrow{<-[$k_{b_{tc}}$]}[180]
+      $b_{DNA}$
+      \arrow(@c2--){->[$k_{a_{deg}}$]}
+      $\emptyset$
+      \arrow(@c3--){->[$k_{ab_{deg}}$]}
+      $\emptyset$
+      \arrow(@c4--){->[$k_{b_{deg}}$]}
+      $\emptyset$
+      \schemestop    
+      }
+\scalebox{0.7}{
+\begin{tabular} {c | c | c}
+Reaction Constant & Chemical Equation & Parameter Value (molecules/s)\\
+\hline
+$k_{atc}$ & $A_{DNA}\rightarrow A_{RNA}$ & 0.6897\\
+$k_{btc}$ & $B_{DNA}\rightarrow B_{RNA}$ & 0.6897\\
+$k_{a,deg}$ & $A_{RNA} \rightarrow \emptyset$ & 0.0033\\
+$k_{b,deg}$ & $B_{RNA} \rightarrow \emptyset$ & 0.0033\\
+$k_{a,on}$ & $A_{RNA}+B_{RNA} \rightarrow A_{RNA}\cdot B_{RNA}$ & 101.4\\
+$k_{b,on}$ & $A_{RNA}+B_{RNA} \rightarrow A_{RNA}\cdot B_{RNA}$ & 101.4\\
+$k_{a,off}$ & $A_{RNA}\cdot B_{RNA} \rightarrow A_{RNA}+B_{RNA}$ & 0.05\\
+$k_{b,off}$ & $A_{RNA}\cdot B_{RNA} \rightarrow A_{RNA}+B_{RNA}$ & 0.05\\
+$k_{ab,deg}$ & $A_{RNA}\cdot B_{RNA} \rightarrow \emptyset$ & 0.0033\\
+\end{tabular}
+}
+\caption{Representative chemical process of the toggle switch. $a_{\mbox{RNA}}$
+ and $b_{\mbox{RNA}}$ are both trans-cleaving hammerhead ribozymes. After
+binding to one another, $a$ cleaves
+$b$, and vice versa.}      
+\end{figure}
+
+
+
+\begin{figure}    
+  \label{fig1}
+      \centering
+       \includegraphics[width=0.4\textwidth]{RNA_based_toggle_timecourse.png}    
+\caption{Example of timecourse showing the lack of stability given initial high concentration of $a_{\mbox{RNA}}$} 
+\end{figure}
 
 \subsection{Implementation of RNA Repressilator Using Ribozymes}
 
@@ -322,6 +377,79 @@ of molecules. As a result, the circuit failed to meet most of the design
 criteria for biological circuit design, and additional parameters would need to 
 be adjusted in order obtain an effective repressilator.
 
+
+\begin{figure}
+\centering
+      \scalebox{0.7}{
+      \schemestart
+      $a_{DNA}$%\phantom{I}
+      \arrow{->[$k_{a_{tc}}$]}
+      $a_{RNA}$\phantom{}
+      \arrow{->[$k_{deg_a}$]}
+      $\emptyset$
+      \schemestop    
+      }
+
+      \scalebox{0.7}{
+        \schemestart
+        $b_{DNA}$%\phantom{I}
+        \arrow{->[$k_{b_{tc}}$]}
+        $b_{RNA}$\phantom{}
+        \arrow{->[$k_{deg_b}$]}
+        $\emptyset$
+        \schemestop
+      }
+
+      \scalebox{0.7}{
+        \schemestart
+        $c_{DNA}$%\phantom{I}
+        \arrow{->[$k_{c_{tc}}$]}
+        $c_{RNA}$\phantom{}
+        \arrow{->[$k_{deg_c}$]}
+        $\emptyset$
+        \schemestop
+      }
+
+      \scalebox{0.7}{
+        \schemestart
+        $a_{RNA}+b_{RNA}$%\phantom{I}
+        \arrow{<=>[$k_{on_{ab}}$][$k_{off_{ab}}$]}
+        $a_{RNA}\cdot b_{RNA}$\phantom{}
+        \arrow{->[$k_{cleave_{a}}$]}
+        $a_{RNA}$
+        \schemestop
+      }
+
+      \scalebox{0.7}{
+        \schemestart
+        $b_{RNA}+c_{RNA}$%\phantom{I}
+        \arrow{<=>[$k_{on_{bc}}$][$k_{off_{bc}}$]}
+        $b_{RNA}\cdot c_{RNA}$\phantom{}
+        \arrow{->[$k_{cleave_{b}}$]}
+        $b_{RNA}$
+        \schemestop
+      }
+
+      \scalebox{0.7}{
+        \schemestart
+        $c_{RNA}+a_{RNA}$%\phantom{I}
+        \arrow{<=>[$k_{on_{ca}}$][$k_{off_{ca}}$]}
+        $c_{RNA}\cdot a_{RNA}$\phantom{}
+        \arrow{->[$k_{cleave_{c}}$]}
+        $c_{RNA}$
+        \schemestop
+      }
+      \caption{Representative chemical processes in the ribozyme repressillator}
+\end{figure}
+
+
+\begin{figure}
+  \includegraphics[scale=0.4]{repress_graph.png}
+\caption{Average over many timecourses of the RNA-repressilator. The
+rate of production and degradation at each time (seconds) step would
+not be experimentally validateable (oscillations too small). }
+\end{figure}
+
 %------------------------------------------------
 
 \section{Discussion}
@@ -343,8 +471,8 @@ the rate of signal transduction.
 One of the major challenges that we faced when modeling systems built with 
 trans-cleaving hammerhead ribozymes is the lack of cooperativity
 in these systems. There were many unknowns that came with designing and characterizing
-a novel set of rationally designable parts. The hammerhead ribozymes themselves
-are not new constructs, 
+a novel set of rationally designable parts. The design of a new hammerhead ribozyme 
+that dimerized before 
 
 Instead, Michaelis–Menten kinetics best described
 the relationship between the ribozyme and its substrate RNA (also a ribozyme in
@@ -521,111 +649,7 @@ Thanks to Jeremy and Sergey for their feedback.
 %% \end{tabular}
 %% \end{table*}
 
-\begin{figure}    
-  \label{fig1}
-      \centering
-       \includegraphics[width=0.4\textwidth]{RNA_based_toggle_timecourse.png}    
-\caption{Example of timecourse showing the lack of stability given initial high concentration of $a_{\mbox{RNA}}$} 
-\end{figure}
 
-\begin{figure}
-  \label{fig2}
-  \centering
-      \scalebox{0.7}{
-      \schemestart
-      $a_{DNA}$%\phantom{I}
-      \arrow{->[$k_{a_{tc}}$]}
-      $a_{RNA}$\phantom{}
-      \arrow{<=>[*0$k_{a_{on}}$][*0$k_{a_{off}}$]}[-90]
-      $a_{RNA}\cdot b_{RNA}$
-      \arrow{<=>[*0$k_{b_{on}}$][*0$k_{b_{off}}$]}[-90]
-      $b_{RNA}$
-      \arrow{<-[$k_{b_{tc}}$]}[180]
-      $b_{DNA}$
-      \arrow(@c2--){->[$k_{a_{deg}}$]}
-      $\emptyset$
-      \arrow(@c3--){->[$k_{ab_{deg}}$]}
-      $\emptyset$
-      \arrow(@c4--){->[$k_{b_{deg}}$]}
-      $\emptyset$
-      \schemestop    
-      }
-\caption{Representative chemical process of the toggle switch. $a_{\mbox{RNA}}$
- and $b_{\mbox{RNA}}$ are both trans-cleaving hammerhead ribozymes. After
-binding to one another, $a$ cleaves
-$b$, and vice versa.}      
-\end{figure}
-
-\begin{figure}
-\centering
-      \scalebox{0.7}{
-      \schemestart
-      $a_{DNA}$%\phantom{I}
-      \arrow{->[$k_{a_{tc}}$]}
-      $a_{RNA}$\phantom{}
-      \arrow{->[$k_{deg_a}$]}
-      $\emptyset$
-      \schemestop    
-      }
-
-      \scalebox{0.7}{
-        \schemestart
-        $b_{DNA}$%\phantom{I}
-        \arrow{->[$k_{b_{tc}}$]}
-        $b_{RNA}$\phantom{}
-        \arrow{->[$k_{deg_b}$]}
-        $\emptyset$
-        \schemestop
-      }
-
-      \scalebox{0.7}{
-        \schemestart
-        $c_{DNA}$%\phantom{I}
-        \arrow{->[$k_{c_{tc}}$]}
-        $c_{RNA}$\phantom{}
-        \arrow{->[$k_{deg_c}$]}
-        $\emptyset$
-        \schemestop
-      }
-
-      \scalebox{0.7}{
-        \schemestart
-        $a_{RNA}+b_{RNA}$%\phantom{I}
-        \arrow{<=>[$k_{on_{ab}}$][$k_{off_{ab}}$]}
-        $a_{RNA}\cdot b_{RNA}$\phantom{}
-        \arrow{->[$k_{cleave_{a}}$]}
-        $a_{RNA}$
-        \schemestop
-      }
-
-      \scalebox{0.7}{
-        \schemestart
-        $b_{RNA}+c_{RNA}$%\phantom{I}
-        \arrow{<=>[$k_{on_{bc}}$][$k_{off_{bc}}$]}
-        $b_{RNA}\cdot c_{RNA}$\phantom{}
-        \arrow{->[$k_{cleave_{b}}$]}
-        $b_{RNA}$
-        \schemestop
-      }
-
-      \scalebox{0.7}{
-        \schemestart
-        $c_{RNA}+a_{RNA}$%\phantom{I}
-        \arrow{<=>[$k_{on_{ca}}$][$k_{off_{ca}}$]}
-        $c_{RNA}\cdot a_{RNA}$\phantom{}
-        \arrow{->[$k_{cleave_{c}}$]}
-        $c_{RNA}$
-        \schemestop
-      }
-      \caption{Representative chemical processes in the ribozyme repressillator}
-\end{figure}
-
-\begin{figure}
-  \includegraphics[scale=0.4]{repress_graph.png}
-\caption{Average over many timecourses of the RNA-repressilator. The
-rate of production and degradation at each time (seconds) step would
-not be experimentally validateable (oscillations too small). }
-\end{figure}
 %----------------------------------------------------------------------------------------
 
 \end{document}

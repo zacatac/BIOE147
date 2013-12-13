@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  12 DEC 2013 22:10
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  12 DEC 2013 22:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -953,69 +953,86 @@ Missing character: There is no ” in font cmr9!
 Missing character: There is no â in font cmr9!
 Missing character: There is no € in font cmr9!
 Missing character: There is no ” in font cmr9!
+\figandtabbox0=\box88
+
+
+! LaTeX Error: Unknown graphics extension: .gif.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.269   \includegraphics[scale=0.5]{cis_trans.gif}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+\figandtabbox1=\box89
+\figandtabbox2=\box90
+<RNA_based_toggle_timecourse.png, id=4, 692.5875pt x 503.8825pt>
+File: RNA_based_toggle_timecourse.png Graphic file (type png)
+
+<use RNA_based_toggle_timecourse.png>
+Package pdftex.def Info: RNA_based_toggle_timecourse.png used on input line 343
+.
+(pdftex.def)             Requested size: 203.99689pt x 148.41339pt.
 Missing character: There is no Â in font cmr9!
 Missing character: There is no ® in font cmr9!
  [1
 
-{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./RNA_b
+ased_toggle_timecourse.png>]
 Missing character: There is no â in font cmr9!
 Missing character: There is no € in font cmr9!
 Missing character: There is no ™ in font cmr9!
+\figandtabbox3=\box91
+\figandtabbox4=\box92
+
+<repress_graph.png, id=21, 504.88625pt x 397.485pt>
+File: repress_graph.png Graphic file (type png)
+ <use repress_graph.png>
+Package pdftex.def Info: repress_graph.png used on input line 447.
+(pdftex.def)             Requested size: 201.95091pt x 158.99118pt.
 Missing character: There is no â in font cmr9!
 Missing character: There is no € in font cmr9!
 Missing character: There is no “ in font cmr9!
 
-Underfull \hbox (badness 10000) in paragraph at lines 363--364
+Underfull \hbox (badness 10000) in paragraph at lines 491--492
 
  []
 
-[2]
+[2 <./repress_graph.png>]
 Missing character: There is no â in font cmssbx10!
 Missing character: There is no € in font cmssbx10!
 Missing character: There is no “ in font cmssbx10!
 Missing character: There is no â in font cmssbx10!
 Missing character: There is no € in font cmssbx10!
 Missing character: There is no “ in font cmssbx10!
- [3] <RNA_based_toggle_timecourse.png, id=24, 692.5875pt x 503.8825pt>
-File: RNA_based_toggle_timecourse.png Graphic file (type png)
-
-<use RNA_based_toggle_timecourse.png>
-Package pdftex.def Info: RNA_based_toggle_timecourse.png used on input line 527
-.
-(pdftex.def)             Requested size: 203.99689pt x 148.41339pt.
-
-<repress_graph.png, id=25, 504.88625pt x 397.485pt>
-File: repress_graph.png Graphic file (type png)
- <use repress_graph.png>
-Package pdftex.def Info: repress_graph.png used on input line 624.
-(pdftex.def)             Requested size: 201.95091pt x 158.99118pt.
-
-[4 <./RNA_based_toggle_timecourse.png> <./repress_graph.png>]
-(./final_paper.aux) ) 
+ [3] (./final_paper.aux) ) 
 Here is how much of TeX's memory you used:
- 19955 strings out of 493315
- 412971 string characters out of 6137904
- 430834 words of memory out of 5000000
- 23069 multiletter control sequences out of 15000+600000
+ 20003 strings out of 493315
+ 413527 string characters out of 6137904
+ 443436 words of memory out of 5000000
+ 23115 multiletter control sequences out of 15000+600000
  15645 words of font info for 59 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 63i,10n,98p,447b,685s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2013/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmmi5.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmmi6.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmmi8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmmi9.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr9.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-ss10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cms
-sbx10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-ssi10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-sy5.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
-6.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.
-pfb>
-Output written on final_paper.pdf (4 pages, 170827 bytes).
+ 63i,10n,98p,447b,697s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2013/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmmi6.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmmi8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmmi9.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr9.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmss10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmssbx10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmssi10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmsy5.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmsy6.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/c
+msy9.pfb>
+Output written on final_paper.pdf (3 pages, 173087 bytes).
 PDF statistics:
- 66 PDF objects out of 1000 (max. 8388607)
- 46 compressed objects within 1 object stream
+ 63 PDF objects out of 1000 (max. 8388607)
+ 44 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 
