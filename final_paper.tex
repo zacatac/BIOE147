@@ -90,7 +90,7 @@
 %% The AMS math files are commonly used to gain access to useful features
 %% like extended math fonts and math commands.
 
-
+\usepackage{hyperref}
 \usepackage{amssymb,amsfonts,amsmath}
 \usepackage{chemfig,siunitx}
 \setcompoundsep{7em}
@@ -112,7 +112,7 @@
 
 % For PNAS Only:
 \contributor{}
-\url{https://www.dropbox.com/sh/zmlcek9to0yqfn5/NNJN9-vXDG}
+%\url{https://www.dropbox.com/sh/zmlcek9to0yqfn5/NNJN9-vXDG}
 \copyrightyear{2013}
 \issuedate{Dec 12th}
 \volume{0}
@@ -126,7 +126,7 @@
 %	TITLE AND AUTHORS
 %----------------------------------------------------------------------------------------
 
-\title{Characterization and Application of trans-cleaving hammerhead ribozymes} % For titles, only capitalize the first letter
+\title{Characterization and Application of trans-cleaving hammerhead ribozymes in genetic circuits} % For titles, only capitalize the first letter
 
 %------------------------------------------------face
 %% Enter authors via the \author command.  
@@ -266,7 +266,9 @@ Using both models, we test hypotheses concerning the ideal design principles men
 previously and reach conclusions for the advantages of each type of circuit.
 
 \begin{figure}
-  \includegraphics[scale=0.5]{cis_trans.gif}
+  \centering
+  \includegraphics[scale=0.5]{cis_trans.jpeg}
+  \caption{Depiction of the action of a trans-cleaving ribozyme}
 \end{figure}
 
 %------------------------------------------------
@@ -280,7 +282,7 @@ ribozymes were computationally designed for transcription in Escherichia coli
 and stochastically modeled in Java using the Gillespie algorithm in order to 
 simulate an RNA logic toggle switch. The final system did not display switch-like 
 behavior however, and the steady states of the ribozyme toggle switch were not
-consistent with the classic toggle circuit. In the RNA circuit (See Fig. 1) , 
+consistent with the classic toggle circuit. In the RNA circuit (See Fig. 2,3(Table 1),4) , 
 steady state concentrations of all species were consistently zero despite changing inlet parameters. 
 At longer timescales, concentration of the species was dominated by degradation, 
 as new ribozyme constructs produced by transcription participated immediately in 
@@ -290,12 +292,10 @@ over the course of the reaction due to high RNA production and degradation rates
 relative to proteins. The system also lacked memory, a key characteristic of the 
 toggle switch, which limited our designed circuit from being a true analog to the toggle circuit.
 
-
-
 \begin{figure}
   \label{fig2}
   \centering
-      \scalebox{0.6}{
+%      \scalebox{0.6}{
       \schemestart
       $a_{DNA}$%\phantom{I}
       \arrow{->[$k_{a_{tc}}$]}
@@ -313,7 +313,15 @@ toggle switch, which limited our designed circuit from being a true analog to th
       \arrow(@c4--){->[$k_{b_{deg}}$]}
       $\emptyset$
       \schemestop    
-      }
+ %     }
+
+\caption{ Representative chemical scheme of toggle switch based on two trans-cleaving 
+hammerhead ribozymes. Ribozyme A cleaves ribozyme B and vice versa after 
+reversibly binding to one another. Translation is not depicted and is assumed to 
+have no effect on transcription nor riboregulation in the circuit.}
+\end{figure}
+\begin{figure}
+
 \scalebox{0.7}{
 \begin{tabular} {c | c | c}
 Reaction Constant & Chemical Equation & Parameter Value (molecules/s)\\
@@ -329,19 +337,24 @@ $k_{b,off}$ & $A_{RNA}\cdot B_{RNA} \rightarrow A_{RNA}+B_{RNA}$ & 0.05\\
 $k_{ab,deg}$ & $A_{RNA}\cdot B_{RNA} \rightarrow \emptyset$ & 0.0033\\
 \end{tabular}
 }
-\caption{Representative chemical process of the toggle switch. $a_{\mbox{RNA}}$
- and $b_{\mbox{RNA}}$ are both trans-cleaving hammerhead ribozymes. After
-binding to one another, $a$ cleaves
-$b$, and vice versa.}      
+\caption{Table 1. Approximated parameters of individual chemical reactions within the 
+riboregulated RNA toggle switch. Values represent rate constants for the reactions 
+and are averaged in units of molecules/s for purposes of Gillespie stochastic modeling. 
+Constants are calculated based on constants for Escherichia coli bacteria.}     
+ 
 \end{figure}
 
-
-
 \begin{figure}    
-  \label{fig1}
-      \centering
-       \includegraphics[width=0.4\textwidth]{RNA_based_toggle_timecourse.png}    
-\caption{Example of timecourse showing the lack of stability given initial high concentration of $a_{\mbox{RNA}}$} 
+
+  \includegraphics[width=0.4\textwidth]{RNA_based_toggle_timecourse.png}    
+  \caption{Timecourse of RNA-based toggle switch with two ribozymes from Gillespie 
+  algorithm. Given an initial concentration of ARNA, concentration does not 
+  reach some steady state value and eventually drops to zero molecules after 10
+  hours. BRNA remains low and ABRNA seems to stay constant throughout the reaction
+  despite high initial concentratinos of ARNA, implying high amounts of degradation of
+  ARNA at early times. G is concentration of reporter protein GFP which is encoded 
+  on a separate mRNA strand that is cleaved by ribozyme A.  When A is not present, GFPRNA is free to be translated and thus fluoresce.}
+
 \end{figure}
 
 \subsection{Implementation of RNA Repressilator Using Ribozymes}
@@ -358,7 +371,7 @@ oscillations of the RNA repressilator more clearly. In addition, the amplitude
 and the period of the oscillations were both tunable based on the rate of binding, 
 rate of cleaving, and rate of production of our hammerhead ribozyme constructs. 
 
-Comparing the RNA repressilator to the classic repressilator (see Figure 3.,4.), the 
+Comparing the RNA repressilator to the classic repressilator (see Figure 5,6(Table 2),7), the 
 time for one cycle of oscillations to complete for the ribozyme circuit (on the order of seconds) 
 was significantly shorter than that of the DNA circuit (on the order of minutes). 
 This difference in period of oscillations is not only a key difference but also explains 
@@ -439,15 +452,53 @@ be adjusted in order obtain an effective repressilator.
         $c_{RNA}$
         \schemestop
       }
-      \caption{Representative chemical processes in the ribozyme repressillator}
+
+\caption{  Representative chemical scheme of repressilator based on three trans-cleaving 
+hammerhead ribozymes in a rock-paper-scissor interaction. Ribozyme A binds to
+ and cleaves ribozyme B, ribozyme B binds to and cleaves ribozyme C, and 
+ribozyme C binds to and cleaves ribozyme A. Translation is not depicted and
+ is assumed to have no effect on transcription nor riboregulation in the
+ circuit.}
+\end{figure}
+\begin{figure}
+\scalebox{0.7}{
+\begin{tabular} {c | c | c}
+Reaction Constant & Chemical Equation & Parameter Value (molecules/s)\\
+\hline
+$k_{atc}$ & $A_{DNA}\rightarrow A_{RNA}$ & 0.6897\\
+$k_{btc}$ & $B_{DNA}\rightarrow B_{RNA}$ & 0.6897\\
+$k_{ctc}$ & $C_{DNA}\rightarrow C_{RNA}$ & 0.6897\\
+$k_{a,deg}$ & $A_{RNA} \rightarrow \emptyset$ & 0.0033\\
+$k_{b,deg}$ & $B_{RNA} \rightarrow \emptyset$ & 0.0033\\
+$k_{c,deg}$ & $C_{RNA} \rightarrow \emptyset$ & 0.0033\\
+$k_{ab,on}$ & $A_{RNA}+B_{RNA} \rightarrow A_{RNA}\cdot B_{RNA}$ & 101.4\\
+$k_{bc,on}$ & $B_{RNA}+C_{RNA} \rightarrow B_{RNA}\cdot C_{RNA}$ & 101.4\\
+$k_{ca,on}$ & $C_{RNA}\cdot A_{RNA} \rightarrow C_{RNA}+A_{RNA}$ & 101.4\\
+$k_{ab,off}$ & $A_{RNA}\cdot B_{RNA} \rightarrow A_{RNA}+B_{RNA}$ & 0.05\\
+$k_{bc,off}$ & $B_{RNA}\cdot C_{RNA} \rightarrow B_{RNA}+C_{RNA}$ & 0.05\\
+$k_{ca,off}$ & $C_{RNA}\cdot A_{RNA} \rightarrow C_{RNA}+A_{RNA}$ & 0.05\\
+$k_{cleave,a}$ & $A_{RNA}\cdot B_{RNA} \rightarrow A_{RNA}$ & 0.5\\
+$k_{cleave,b}$ & $B_{RNA}\cdot C_{RNA} \rightarrow B_{RNA}$ & 0.5\\
+$k_{cleave,c}$ & $C_{RNA}\cdot A_{RNA} \rightarrow C_{RNA}$ & 0.5\\
+\end{tabular}
+}
+
+\caption{Table 2. Approximated parameters of individual chemical reactions 
+within the riboregulated RNA repressilator. Values represent rate constants for 
+the reactions and are averaged in units of molecules/s for purposes of Gillespie 
+stochastic modeling. Constants are calculated based on constants for Escherichia 
+coli bacteria.}
 \end{figure}
 
 
 \begin{figure}
   \includegraphics[scale=0.4]{repress_graph.png}
-\caption{Average over many timecourses of the RNA-repressilator. The
-rate of production and degradation at each time (seconds) step would
-not be experimentally validateable (oscillations too small). }
+\caption{
+Average trace over 100 seconds of RNA-based repressilator with three ribozymes
+ from Gillespie algorithm. Graph is based on an average sample of 500
+ repetitions of timecourses from stochastic model. Time and molecules are both
+ kept at low levels in order to clearly observe the oscillations in concentrations. While
+ oscillations are observed, they are irregular and unstable, presumably due to high rates of transcription and degradation of mRNA.}
 \end{figure}
 
 %------------------------------------------------

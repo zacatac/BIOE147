@@ -1,4 +1,21 @@
 \relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
 \citation{promise}
 \citation{microelectronics}
 \citation{howfolds}
@@ -11,26 +28,27 @@
 \citation{DNA_toggle}
 \citation{repressilator}
 \citation{repressilator}
-\@writefile{toc}{\contentsline {section}{Introduction}{1}}
-\pgfsyspdfmark {pgfid1}{25189447}{33578810}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Representative chemical process of the toggle switch. $a_{\unhbox \voidb@x \hbox {RNA}}$ and $b_{\unhbox \voidb@x \hbox {RNA}}$ are both trans-cleaving hammerhead ribozymes. After binding to one another, $a$ cleaves $b$, and vice versa.}}{1}}
+\@writefile{toc}{\contentsline {section}{Introduction}{1}{section*.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Depiction of the action of a trans-cleaving ribozyme}}{1}{figure.1}}
+\pgfsyspdfmark {pgfid1}{22492146}{30721885}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces  Representative chemical scheme of toggle switch based on two trans-cleaving hammerhead ribozymes. Ribozyme A cleaves ribozyme B and vice versa after reversibly binding to one another. Translation is not depicted and is assumed to have no effect on transcription nor riboregulation in the circuit.}}{1}{figure.2}}
 \newlabel{fig2}{{}{1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Example of timecourse showing the lack of stability given initial high concentration of $a_{\unhbox \voidb@x \hbox {RNA}}$}}{1}}
-\newlabel{fig1}{{}{1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Table 1. Approximated parameters of individual chemical reactions within the riboregulated RNA toggle switch. Values represent rate constants for the reactions and are averaged in units of molecules/s for purposes of Gillespie stochastic modeling. Constants are calculated based on constants for Escherichia coli bacteria.}}{1}{figure.3}}
 \citation{RNA_structure_function}
 \citation{list_tools}
-\@writefile{toc}{\contentsline {section}{Results}{2}}
-\@writefile{toc}{\contentsline {subsection}{Implementation of RNA Toggle Switch Using trans-cleaving hammerhead ribozymes}{2}}
-\@writefile{toc}{\contentsline {subsection}{Implementation of RNA Repressilator Using Ribozymes}{2}}
-\@writefile{toc}{\contentsline {section}{Discussion}{2}}
-\pgfsyspdfmark {pgfid2}{24869509}{21347343}
-\pgfsyspdfmark {pgfid3}{24912469}{20523276}
-\pgfsyspdfmark {pgfid4}{24910606}{19867916}
-\pgfsyspdfmark {pgfid5}{23041222}{19046909}
-\pgfsyspdfmark {pgfid6}{23103799}{17905857}
-\pgfsyspdfmark {pgfid7}{22958873}{16804437}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Representative chemical processes in the ribozyme repressillator}}{2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Average over many timecourses of the RNA-repressilator. The rate of production and degradation at each time (seconds) step would not be experimentally validateable (oscillations too small). }}{2}}
+\@writefile{toc}{\contentsline {section}{Results}{2}{section*.2}}
+\@writefile{toc}{\contentsline {subsection}{Implementation of RNA Toggle Switch Using trans-cleaving hammerhead ribozymes}{2}{section*.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Timecourse of RNA-based toggle switch with two ribozymes from Gillespie algorithm. Given an initial concentration of ARNA, concentration does not reach some steady state value and eventually drops to zero molecules after 10 hours. BRNA remains low and ABRNA seems to stay constant throughout the reaction despite high initial concentratinos of ARNA, implying high amounts of degradation of ARNA at early times. G is concentration of reporter protein GFP which is encoded on a separate mRNA strand that is cleaved by ribozyme A. When A is not present, GFPRNA is free to be translated and thus fluoresce.}}{2}{figure.4}}
+\@writefile{toc}{\contentsline {subsection}{Implementation of RNA Repressilator Using Ribozymes}{2}{section*.4}}
+\pgfsyspdfmark {pgfid2}{24869509}{36174974}
+\pgfsyspdfmark {pgfid3}{24912469}{35350907}
+\pgfsyspdfmark {pgfid4}{24910606}{34695547}
+\pgfsyspdfmark {pgfid5}{23041222}{33874540}
+\pgfsyspdfmark {pgfid6}{23103799}{32733488}
+\pgfsyspdfmark {pgfid7}{23059907}{31632068}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces  Representative chemical scheme of repressilator based on three trans-cleaving hammerhead ribozymes in a rock-paper-scissor interaction. Ribozyme A binds to and cleaves ribozyme B, ribozyme B binds to and cleaves ribozyme C, and ribozyme C binds to and cleaves ribozyme A. Translation is not depicted and is assumed to have no effect on transcription nor riboregulation in the circuit.}}{2}{figure.5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Table 2. Approximated parameters of individual chemical reactions within the riboregulated RNA repressilator. Values represent rate constants for the reactions and are averaged in units of molecules/s for purposes of Gillespie stochastic modeling. Constants are calculated based on constants for Escherichia coli bacteria.}}{2}{figure.6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces  Average trace over 100 seconds of RNA-based repressilator with three ribozymes from Gillespie algorithm. Graph is based on an average sample of 500 repetitions of timecourses from stochastic model. Time and molecules are both kept at low levels in order to clearly observe the oscillations in concentrations. While oscillations are observed, they are irregular and unstable, presumably due to high rates of transcription and degradation of mRNA.}}{2}{figure.7}}
 \citation{Anderson_Gillespie}
 \bibcite{promise}{1}
 \bibcite{microelectronics}{2}
@@ -45,4 +63,5 @@
 \bibcite{Anderson_Gillespie}{11}
 \bibcite{RNA_structure_function}{12}
 \bibcite{list_tools}{13}
+\@writefile{toc}{\contentsline {section}{Discussion}{3}{section*.5}}
 \gdef\lastpage{4}
