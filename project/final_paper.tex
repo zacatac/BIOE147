@@ -115,8 +115,8 @@
 %\url{https://www.dropbox.com/sh/zmlcek9to0yqfn5/NNJN9-vXDG}
 \copyrightyear{2013}
 \issuedate{Dec 12th}
-\volume{}
-\issuenumber{}
+\volume{0}
+\issuenumber{0}
 
 %----------------------------------------------------------------------------------------
 
@@ -153,7 +153,7 @@
 %% Javier de Ruiz Garcia\affil{2}{Universidad de Murcia, Bioquimica y Biologia
 %% Molecular, Murcia, Spain}, \and Franklin Sonnery\affil{2}{}}
 
-\author{Ryan Tsoi\affil{1}{University of California, Berkeley}\affil{2}{Crusher of Hearts, Breaker of Dreams},
+\author{Ryan Tsoi\affil{1}{University of California, Berkeley},
 Zackery Field\affil{1}{University of California, Berkeley}
 }
 
@@ -267,7 +267,7 @@ previously and reach conclusions for the advantages of each type of circuit.
 
 \begin{figure}
   \centering
-  \includegraphics[scale=0.45]{cis_trans.jpeg}
+  \includegraphics[scale=0.5]{cis_trans.jpeg}
   \caption{Depiction of the action of a trans-cleaving ribozyme}
 \end{figure}
 
@@ -505,39 +505,6 @@ Average trace over 100 seconds of RNA-based repressilator with three ribozymes
 
 \section{Discussion}
 
-
-The ability to create reliable, orthogonal, and predictable genetic circuits is 
-vital to transforming synthetic biology into an engineering science instead of an 
-inefficient technique. The use of riboregulation in mRNA for translational is an example 
-of a circuit design that is easily tunable with reaction rates, orthogonal with 
-unique Watson-Crick base pairing, and designable in comparison to protein designing. 
-Establishing RNA as superior to proteins for meeting the design principles of genetic 
-engineering has a profound effect on circuit design from both a bottom-up and top-down 
-design methodology and can solve the issue of scaling system complexity.
-
-Here, we modeled RNA gene circuit equivalents of two well-characterized systems, 
-the toggle switch and the repressilator, and compared outputs of each system to their 
-respective counterparts using traditional promoter-repressor pairings. At the core 
-of this system is the trans-cleaving hammerhead ribozyme, which recognizes a sequence 
-of ribonucleotide bases on an mRNA strand, binds to that site, and cleaves the mRNA. 
-When two ribozymes that cleave one another are placed together in a circuit, we achieve 
-an effect similar to a toggle switch where high transcription of one ribozyme leads to 
-constant high concentratinos of that ribozyme.  In addition, when three ribozymes are 
-placed together in a rock-paper-scissors fashion, we effectively obtain a repressilator, 
-where concentrations of each ribozyme vary with some set period of oscillation.
-
-The toggle switch obtained using riboregulation did not obtain the desired output 
-as degradation rates dominated the system and eventually led to a deterministic 
-outcome where neither ribozyme is present in the system. When modeling the RNA repressilator, 
-concentration oscillations for each species are clearly seen from the stochastic model. 
-However, high rates of transcription and translation introduce noise into the system, 
-leading to irregular time periods as well as amplitudes for each oscillation. 
-In addition, the system never reaches a state where any of the ribozymes reach a 
-significantly low concentration as all of the ribozymes vary from 0.5-0.8 molecules 
-during the course of the simulation. Riboregulation of mRNA has been observed to be 
-an effective method for genetic circuit design ~\cite{Samarsky}, and it is likely that with 
-additional tuning an effective repressilator could be coded using RNA-based logic.
-
 As tertiary structure does for proteins, 2D and 3D structures of RNA molecules 
 play a major role in the function of these molecules ~\cite{RNA_structure_function}.
 There are many tools available the predict these higher order structures in 
@@ -554,19 +521,16 @@ the rate of signal transduction.
 
 One of the major challenges that we faced when modeling systems built with 
 trans-cleaving hammerhead ribozymes is the lack of cooperativity
-in these systems. To overcome this challenge one could have designed the hammerhead
-ribozyme to have some kind of cooperative allosteric binding. 
-However, design of a new hammerhead ribozyme 
-that somehow dimerized before its cleaving action was activated was counter to the
-robust and self-contained system that we were trying to implement. The need for 
-simplicity in each of the individual riboregulatory elements seemed to be a more important
-design decision for future applications than having a more complex, but cooperative
-riboregulatory element. 
+in these systems. There were many unknowns that came with designing and characterizing
+a novel set of rationally designable parts. The design of a new hammerhead ribozyme 
+that dimerized before 
 
-Despite the challenges faced during modeling, we believe RNA still provides 
-more promise for achieving predictable, orthogonal, reliable and safe designs than proteins. 
-If RNA circuits can be optimized and a system of parts established, it will revolutionize biological 
-circuit design and allow synthetic biology to rapidly grow and become an established engineering science.
+Instead, Michaelis–Menten kinetics best described
+the relationship between the ribozyme and its substrate RNA (also a ribozyme in
+our cases). 
+The lack of cooperativity also resulted in the lack of
+bistable modes in the modeled toggle switch. In the toggle switch the two
+ribozymes cleaved each other $a_{RNA}$ $b_{RNA}$ As discussed above, any 
 
 %----------------------------------------------------------------------------------------
 %	MATERIALS AND METHODS
@@ -580,9 +544,9 @@ circuit design and allow synthetic biology to rapidly grow and become an establi
 \subsection{Methods}
 
 The modeling of the ribozyme toggle switch, and the ribozyme repressilator used
-the same set of tools, and the same process. The representative chemical reactions of each 
+the same set of tools, and used the same process. The representative chemical reactions of each 
 of these circuits designed by hand in a way that was equivalent to the original
-toggle switch (Fig. 2) and repressilator design (Fig. 5). Each of these chemical
+toggle switch (Fig 2.) and repressilator design (Fig 3.). Each of these chemical
 reactions given its own definition of likelihood based on its subtrate(s) and 
 associated constants. These equations are then added to a Markov Chain simulator object.
 When run, this object simulates random behavior by selecting two random numbers. The
@@ -590,13 +554,12 @@ first of which is used to portray the length of the next time step. After taking
 into account the relaitve concentrations of each of the species and the resulting likelihood
 of each of the reactions, the second random number is used to select the next reaction
 to take place. So on each iteration the time in the model increases, and the chain
-terminates upon the arrival at the endtime. The species are tracked throughout this time
-course and can then be plotted to give a time trace of their changing concentrations.
+terminates upon the arrival at the endtime. 
 
 Literature search revealed the likely rates at which each of the reactions was to 
 occur. Necessary parameters that we had to determine included: transcription rates,
 binding and diffusion rates of partially complimentary RNA strands, rate of
-cleavage of hammerhead ribozymes, degradation of before and after cleavage. 
+cleavage of hammerhead ribozymes, degradation of before and after cleavage.
 
 Source is available here: https://github.com/zacatac/ribozyme-circuit-modeling
 
@@ -607,6 +570,8 @@ Java implementation of the Gillespie algorithm created by Anderson
 for his Genetic Devices course ~\cite{Anderson_Gillespie}.
 
 Matlab implementation of the Gillespie algorithm created by Ryan Tsoi. 
+
+
 
 \end{materials}
 
@@ -687,8 +652,7 @@ Thanks to Jeremy and Sergey for their feedback.
 
 \bibitem{list_tools} \url{http://en.wikipedia.org/wiki/List_of_RNA_structure_prediction_software}
 
-\bibitem{Samarsky}Samarsky et al.; \emph{A small nucleolar RNA:ribozyme hybrid cleaves a nucleolar RNA
-target in vivo with near-perfect efficiency}; \url{http://www.pnas.org/content/96/12/6609.full.pdf}
+
 \end{thebibliography}
 
 %----------------------------------------------------------------------------------------
